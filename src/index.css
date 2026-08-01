@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-night-blue: #0E2232;
+    --color-gold: #F5C51B;
+    --color-gray-custom: #666A6D;
+    --color-deep-black: #06090B;
+    --color-off-white: #F6F6F3;
+    --color-white: #FFFFFF;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-deep-black);
+    background-color: var(--color-off-white);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-title {
+    font-family: 'Space Grotesk', 'Space BT', 'Montserrat', sans-serif;
+  }
+
+  .font-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+}
+
+/* Custom continuous ticker animation for Clients and Partners logo marquee */
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 35s linear infinite;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0E2232;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F5C51B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a70f;
+}
+
+/* Gold fine line accent */
+.gold-line-v {
+  width: 3px;
+  background-color: #F5C51B;
+}
+
+.gold-line-h {
+  height: 2px;
+  background-color: #F5C51B;
+}
+
