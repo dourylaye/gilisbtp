@@ -32,18 +32,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onSelectRequestType
           <div className="md:col-span-7 space-y-3">
             <div className="flex items-center space-x-4">
               {!logoError ? (
-                <div className="p-2.5 bg-white rounded-xl border-2 border-[#F5C51B] shadow-lg flex items-center justify-center">
-                  <img 
-                    src="Images/LogoVertical.webp" 
-                    alt="GILIS BTP Logo" 
-                    referrerPolicy="no-referrer"
-                    className="h-16 w-auto object-contain" 
-                    onError={() => setLogoError(true)}
-                  />
-                </div>
+                <img 
+                  src="Images/LogoVertical_white.webp" 
+                  alt="GILIS BTP Logo" 
+                  referrerPolicy="no-referrer"
+                  className="h-16 w-auto object-contain" 
+                  onError={() => setLogoError(true)}
+                />
               ) : (
-                <div className="flex flex-col items-center justify-center px-4 py-3 rounded-xl bg-[#0E2232] border-2 border-[#F5C51B] shadow-lg">
-                  <span className="text-lg font-black text-[#F5C51B] font-title leading-none tracking-wider">GILIS</span>
+                <div className="flex flex-col items-start justify-center">
+                  <span className="text-xl font-black text-[#F5C51B] font-title leading-none tracking-wider">GILIS</span>
                   <span className="text-xs font-extrabold text-white font-title leading-none tracking-widest mt-1">BTP</span>
                 </div>
               )}

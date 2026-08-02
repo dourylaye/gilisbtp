@@ -117,17 +117,15 @@ export const Navbar: React.FC<NavbarProps> = () => {
           >
             {!logoError ? (
               <img 
-                src="Images/LogoHorizontal.webp" 
+                src={isLightBg ? "Images/LogoHorizontal.webp" : "Images/LogoHorizontal_white.webp"} 
                 alt="GILIS BTP" 
                 referrerPolicy="no-referrer"
-                className={`h-10 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
-                  !isLightBg ? 'brightness-0 invert' : ''
-                }`}
+                className="h-10 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105"
                 onError={() => setLogoError(true)}
               />
             ) : (
-              <div className="flex items-center space-x-2 font-black font-title text-xl tracking-wider">
-                <span className="bg-[#F5C51B] text-[#0E2232] px-2.5 py-1 rounded-md font-black shadow-sm">GILIS</span>
+              <div className="flex items-center space-x-1.5 font-black font-title text-xl tracking-wider">
+                <span className="text-[#F5C51B] font-black">GILIS</span>
                 <span className={isLightBg ? 'text-[#0E2232]' : 'text-white'}>BTP</span>
               </div>
             )}
