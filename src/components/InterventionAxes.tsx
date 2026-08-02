@@ -64,6 +64,7 @@ export const InterventionAxes: React.FC = () => {
                   <img
                     src={axis.image}
                     alt={axis.title}
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-85"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1622] via-[#0A1622]/40 to-transparent"></div>

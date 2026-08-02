@@ -55,6 +55,7 @@ export const EngagementsSection: React.FC = () => {
         <img
           src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&q=80&w=2000"
           alt="Chantier BTP - Nos Engagements"
+          referrerPolicy="no-referrer"
           className="w-full h-full object-cover object-center opacity-40 filter brightness-95 contrast-105"
         />
         {/* Soft Warm Gradients for Legibility */}

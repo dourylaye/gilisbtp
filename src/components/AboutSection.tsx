@@ -146,6 +146,7 @@ export const AboutSection: React.FC = () => {
               <img
                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200"
                 alt="Capacité matérielle et engins lourds GILIS BTP"
+                referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1622] via-[#0A1622]/30 to-transparent"></div>

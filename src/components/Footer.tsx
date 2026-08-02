@@ -36,6 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onSelectRequestType
                   <img 
                     src="/Images/LogoVertical.webp" 
                     alt="GILIS BTP Logo" 
+                    referrerPolicy="no-referrer"
                     className="h-16 w-auto object-contain" 
                     onError={() => setLogoError(true)}
                   />

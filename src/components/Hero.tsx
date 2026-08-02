@@ -58,6 +58,7 @@ export const Hero: React.FC<HeroProps> = ({ onSelectRequestType }) => {
             <img
               src={imgUrl}
               alt="Chantier GILIS BTP"
+              referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center filter brightness-95 contrast-105"
             />
           </div>

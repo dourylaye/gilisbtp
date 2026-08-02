@@ -89,6 +89,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                   <img
                     src={DIRECTOR_DATA.image}
                     alt={DIRECTOR_DATA.name}
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0E2232]/80 via-transparent to-transparent"></div>

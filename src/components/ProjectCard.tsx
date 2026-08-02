@@ -72,6 +72,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
           <img
             src={project.images[currentImgIndex]}
             alt={project.title}
+            referrerPolicy="no-referrer"
             className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A1622]/90 via-transparent to-black/20"></div>
