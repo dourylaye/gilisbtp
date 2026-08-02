@@ -34,7 +34,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onSelectRequestType
               {!logoError ? (
                 <div className="p-2.5 bg-white rounded-xl border-2 border-[#F5C51B] shadow-lg flex items-center justify-center">
                   <img 
-                    src="/Images/LogoVertical.webp" 
+                    src="Images/LogoVertical.webp" 
                     alt="GILIS BTP Logo" 
                     referrerPolicy="no-referrer"
                     className="h-16 w-auto object-contain" 
