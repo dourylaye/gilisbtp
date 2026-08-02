@@ -5,7 +5,7 @@ export const EXPERTISES: Expertise[] = [
     id: 'routes',
     number: '01',
     title: 'Routes et infrastructures routières',
-    image: 'Images/Pole1.webp',
+    image: '/Images/Pole1.webp',
     summary: 'Conception, bitumage, aménagement et modernisation des axes routiers urbains et interurbains.',
     services: [
       'Études géotechniques et tracé routier',
@@ -19,7 +19,7 @@ export const EXPERTISES: Expertise[] = [
     id: 'batiments',
     number: '02',
     title: 'Construction de bâtiments',
-    image: 'Images/Pole2.webp',
+    image: '/Images/Pole2.webp',
     summary: 'Édification d’immeubles administratifs, commerciaux, résidentiels et d’équipements publics.',
     services: [
       'Gros œuvre et structures en béton armé',
@@ -33,7 +33,7 @@ export const EXPERTISES: Expertise[] = [
     id: 'genie-civil',
     number: '03',
     title: 'Ouvrages d’art et génie civil',
-    image: 'Images/Pole3.webp',
+    image: '/Images/Pole3.webp',
     summary: 'Réalisation d’infrastructures majeures : ponts, viaducs, dalles de franchissement et structures lourdes.',
     services: [
       'Ponts à poutres, dalles et ouvrages d’art',
@@ -47,7 +47,7 @@ export const EXPERTISES: Expertise[] = [
     id: 'vrd',
     number: '04',
     title: 'Voiries et réseaux divers (VRD)',
-    image: 'Images/Pole4.webp',
+    image: '/Images/Pole4.webp',
     summary: 'Viabilisation de terrains, aménagement urbain et pose de réseaux techniques souterrains.',
     services: [
       'Terrassement et nivellement de grandes surfaces',
@@ -61,7 +61,7 @@ export const EXPERTISES: Expertise[] = [
     id: 'hydraulique',
     number: '05',
     title: 'Hydraulique et adduction d’eau',
-    image: 'Images/Pole5.webp',
+    image: '/Images/Pole5.webp',
     summary: 'Construction de châteaux d’eau, stations de pompage et réseaux d’adduction d’eau potable.',
     services: [
       'Construction de châteaux d’eau en béton armé',
@@ -75,7 +75,7 @@ export const EXPERTISES: Expertise[] = [
     id: 'rehabilitation',
     number: '06',
     title: 'Réhabilitation et entretien',
-    image: 'Images/Pole6.webp',
+    image: '/Images/Pole6.webp',
     summary: 'Diagnostic, réparation structurelle, rénovation et maintenance préventive des ouvrages.',
     services: [
       'Diagnostic technique et expertise de vétusté',

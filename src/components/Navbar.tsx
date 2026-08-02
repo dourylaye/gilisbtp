@@ -117,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           >
             {!logoError ? (
               <img 
-                src={isLightBg ? "Images/LogoHorizontal.webp" : "Images/LogoHorizontal_white.webp"} 
+                src={isLightBg ? "/Images/LogoHorizontal.webp" : "/Images/LogoHorizontal_white.webp"} 
                 alt="GILIS BTP" 
                 referrerPolicy="no-referrer"
                 className="h-10 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105"
