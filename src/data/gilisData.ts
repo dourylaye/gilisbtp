@@ -468,7 +468,7 @@ export const PARTICULIERS_PROJECTS: Project[] = [
       'Style': 'Moderne / Contemporain'
     },
     results: 'Villa clé en main d’une grande finesse architecturale, livrée dans les délais.',
-    images: ['Galerie/PAT1.webp']
+    images: ['/Galerie/PAT1.webp']
   },
   {
     id: 'pat-2',
@@ -493,7 +493,7 @@ export const PARTICULIERS_PROJECTS: Project[] = [
       'Finition': 'Pierre naturelle & Enduit lisse'
     },
     results: 'Ouvrage résidentiel chaleureux et élégant offrant des performances acoustiques et thermiques d’excellence.',
-    images: ['Galerie/PAT2.webp']
+    images: ['/Galerie/PAT2.webp']
   },
   {
     id: 'pat-3',
@@ -518,7 +518,7 @@ export const PARTICULIERS_PROJECTS: Project[] = [
       'Style': 'Architectural contemporain'
     },
     results: 'Duplex d’exception alliant confort moderne, sécurité et esthétique soignée.',
-    images: ['Galerie/PAT3.webp']
+    images: ['/Galerie/PAT3.webp']
   },
   {
     id: 'pat-4',
@@ -543,7 +543,7 @@ export const PARTICULIERS_PROJECTS: Project[] = [
       'Finition': 'Luxe épuré'
     },
     results: 'Résidence de prestige au style affirmation contemporain et à l’étanchéité optimale.',
-    images: ['Galerie/PAT4.webp']
+    images: ['/Galerie/PAT4.webp']
   },
   {
     id: 'pat-5',
@@ -568,7 +568,7 @@ export const PARTICULIERS_PROJECTS: Project[] = [
       'Aménagement': 'Cour pavée & Jardin'
     },
     results: 'Villa très fonctionnelle au cadre de vie agréable, livrée clé en main.',
-    images: ['Galerie/PAT5.webp']
+    images: ['/Galerie/PAT5.webp']
   },
   {
     id: 'pat-6',
@@ -593,7 +593,7 @@ export const PARTICULIERS_PROJECTS: Project[] = [
       'Capacité': 'Grandes réceptions & Dépendance'
     },
     results: 'Superbe propriété d’une solidité exemplaire et au confort optimal pour toute la famille.',
-    images: ['Galerie/PAT6.png']
+    images: ['/Galerie/PAT6.png']
   }
 ];
 
@@ -621,7 +621,7 @@ export const ENTREPRISES_PROJECTS: Project[] = [
       'Postes de travail': '120 emplois'
     },
     results: 'Livraison clé en main d’un bâtiment tertiaire de haute valeur patrimoniale.',
-    images: ['Galerie/E1.png']
+    images: ['/Galerie/E1.png']
   },
   {
     id: 'ent-2',
@@ -646,7 +646,7 @@ export const ENTREPRISES_PROJECTS: Project[] = [
       'Superficie plateforme': '30 000 m²'
     },
     results: 'Fluidification des flux logistiques et accès sécurisé 24h/24 pour engins lourds.',
-    images: ['Galerie/E2.png']
+    images: ['/Galerie/E2.png']
   },
   {
     id: 'ent-3',
@@ -671,7 +671,7 @@ export const ENTREPRISES_PROJECTS: Project[] = [
       'Type d’ouvrage': 'VRD complet'
     },
     results: 'Parc d’activités entièrement viabilisé conforme aux normes environnementales.',
-    images: ['Galerie/E3.png']
+    images: ['/Galerie/E3.png']
   },
   {
     id: 'ent-4',
@@ -696,7 +696,7 @@ export const ENTREPRISES_PROJECTS: Project[] = [
       'Charge dallage': '5 tonnes/m²'
     },
     results: 'Entrepôt moderne opérationnel offrant un volume de stockage optimal.',
-    images: ['Galerie/E4.png']
+    images: ['/Galerie/E4.png']
   },
   {
     id: 'ent-5',
@@ -721,7 +721,7 @@ export const ENTREPRISES_PROJECTS: Project[] = [
       'Classe béton': 'C35/45'
     },
     results: 'Infrastructure de génie civil certifiée pour résister aux sollicitations extrêmes.',
-    images: ['Galerie/E5.png']
+    images: ['/Galerie/E5.png']
   },
   {
     id: 'ent-6',
@@ -746,7 +746,7 @@ export const ENTREPRISES_PROJECTS: Project[] = [
       'Certification': 'HQE / Efficacité énergétique'
     },
     results: 'Campus d’innovation emblématique livré dans le respect des exigences esthétiques et techniques.',
-    images: ['Galerie/E6.png']
+    images: ['/Galerie/E6.png']
   }
 ];
 
