@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronRight, HardHat, Award, ShieldCheck, TrendingUp, Users, Send, CheckCircle2, Sparkles, UserPlus } from 'lucide-react';
+import { ChevronRight, HardHat, Award, ShieldCheck, TrendingUp, Send, CheckCircle2, Sparkles } from 'lucide-react';
 import { CareerModal } from './CareerModal';
 
 export const CareersSection: React.FC = () => {
@@ -184,17 +184,6 @@ export const CareersSection: React.FC = () => {
                 </div>
               </div>
 
-            </div>
-
-            {/* Bottom Footer Box */}
-            <div className="pt-4 border-t border-gray-100 text-xs text-gray-500 flex items-center justify-between">
-              <span className="flex items-center space-x-1.5">
-                <Users className="w-4 h-4 text-[#B8860B]" />
-                <span className="font-medium">Base de talents GILIS BTP</span>
-              </span>
-              <span className="font-bold text-[#0E2232] text-[11px] bg-slate-100 px-2.5 py-1 rounded-md border border-gray-200">
-                Traitement garanti des CV sous 48h
-              </span>
             </div>
 
           </div>

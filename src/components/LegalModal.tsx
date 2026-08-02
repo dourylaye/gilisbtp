@@ -51,16 +51,20 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
         <div class="p-6 sm:p-8 space-y-6 text-xs sm:text-sm text-gray-700 leading-relaxed">
           {type === 'mentions' ? (
             <>
-              <div class="space-y-2">
-                <h4 class="font-title font-bold text-[#0E2232] text-base">1. Éditeur du site</h4>
+              <div className="space-y-2">
+                <h4 className="font-title font-bold text-[#0E2232] text-base">1. Éditeur du site &amp; Identifiants légaux</h4>
                 <p>
-                  Le site internet GILIS BTP est édité par la société GILIS BTP SARL, société à responsabilité limitée au capital social de 100 000 000 FCFA, immatriculée au Registre du Commerce et du Crédit Mobilier (RCCM) sous le numéro CI-ABJ-2015-B-12345.
+                  Le site internet GILIS BTP est édité par la société <strong>GILIS BTP SARL</strong>, Société à Responsabilité Limitée.
                 </p>
-                <p>
-                  Siège social : Zone Industrielle &amp; Commerciale, Cotonou, Bénin.<br />
-                  Téléphone : +229 21 30 00 00<br />
-                  Courriel : contact@gilis-btp.com
-                </p>
+                <div className="p-4 bg-slate-50 border border-gray-200 rounded-sm space-y-1.5 text-xs text-gray-800">
+                  <p><strong>Siège Social :</strong> C / 383 Quartier Aïdjedo, Cotonou - BENIN</p>
+                  <p><strong>Boîte Postale :</strong> 06 BP 1771 PK3, Cotonou - BENIN</p>
+                  <p><strong>N° RCCM :</strong> RB / COT / 17 B 19856</p>
+                  <p><strong>N° IFU :</strong> 3201710108299</p>
+                  <p><strong>Téléphones :</strong> 00229 0197086645 / 0167676757</p>
+                  <p><strong>Email :</strong> gilisbtp33@gmail.com</p>
+                  <p><strong>Compte Bancaire :</strong> NSIA BANK S.A. — Compte n° 260457498027</p>
+                </div>
               </div>
 
               <div class="space-y-2">

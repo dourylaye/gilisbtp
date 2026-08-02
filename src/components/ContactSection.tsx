@@ -65,12 +65,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ selectedRequestT
           {/* Left Column: Contact Cards & Office Details */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6 h-full">
             
-            <div className="bg-[#0E2232] text-white p-7 sm:p-8 rounded-sm space-y-6 shadow-lg border-t-4 border-[#F5C51B] flex-1 flex flex-col justify-between">
+            <div className="bg-[#0E2232] text-white p-7 sm:p-8 rounded-sm space-y-5 shadow-lg border-t-4 border-[#F5C51B] flex-1">
               <div>
                 <h3 className="font-title text-2xl font-bold text-white">
                   Siège Social &amp; Direction Technique
                 </h3>
-                <p className="font-subtitle text-xs text-[#F5C51B] mt-1">
+                <p className="font-subtitle text-xs text-[#F5C51B] mt-1 font-semibold">
                   GILIS BTP SARL
                 </p>
               </div>
@@ -79,33 +79,51 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ selectedRequestT
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-[#F5C51B] mt-0.5 shrink-0" />
                   <div>
-                    <span className="font-semibold text-white block">Adresse :</span>
-                    <span>Zone Industrielle &amp; Commerciale, Bd. de la Marina, Cotonou, Bénin</span>
+                    <span className="text-white font-medium block">C / 383 Quartier Aïdjedo, Cotonou — BENIN</span>
+                    <span className="block text-gray-300 text-xs mt-0.5">06 BP 1771 PK3</span>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-3">
-                  <Phone className="w-5 h-5 text-[#F5C51B] mt-0.5 shrink-0" />
-                  <div>
-                    <span className="font-semibold text-white block">Téléphones direct :</span>
-                    <span>+229 21 30 00 00 / +229 97 00 00 00</span>
-                  </div>
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-[#F5C51B] shrink-0" />
+                  <span className="text-white font-medium">00229 0197086645 / 0167676757</span>
                 </div>
 
                 <div className="flex items-start space-x-3">
                   <Mail className="w-5 h-5 text-[#F5C51B] mt-0.5 shrink-0" />
-                  <div>
-                    <span className="font-semibold text-white block">Courriels professionnels :</span>
-                    <span>contact@gilis-btp.com • devis@gilis-btp.com</span>
+                  <div className="flex flex-col space-y-0.5">
+                    <a href="mailto:direction@gilisbtp.com" className="text-white font-semibold hover:text-[#F5C51B] transition-colors">
+                      direction@gilisbtp.com
+                    </a>
+                    <a href="mailto:gilisbtp33@gmail.com" className="text-gray-300 hover:text-[#F5C51B] transition-colors text-xs">
+                      gilisbtp33@gmail.com
+                    </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-3">
-                  <Clock className="w-5 h-5 text-[#F5C51B] mt-0.5 shrink-0" />
-                  <div>
-                    <span className="font-semibold text-white block">Horaires d’ouverture :</span>
-                    <span>Lundi - Vendredi : 07h30 - 18h00 | Samedi : 08h00 - 13h00</span>
+                {/* Registration & Bank info box */}
+                <div className="pt-3 border-t border-white/10 space-y-2 text-xs">
+                  <div className="grid grid-cols-2 gap-2 text-gray-300">
+                    <div>
+                      <span className="text-[#F5C51B] font-bold block">N° RCCM</span>
+                      <span className="font-mono text-[11px] text-white">RB / COT / 17 B 19856</span>
+                    </div>
+                    <div>
+                      <span className="text-[#F5C51B] font-bold block">N° IFU</span>
+                      <span className="font-mono text-[11px] text-white">3201710108299</span>
+                    </div>
                   </div>
+
+                  <div className="pt-1.5 border-t border-white/5">
+                    <span className="text-[#F5C51B] font-bold block">Règlement Bancaire</span>
+                    <span className="text-white block font-medium">NSIA BANK S.A.</span>
+                    <span className="font-mono text-[11px] text-gray-300">Compte n° 260457498027</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-3 pt-3 border-t border-white/10">
+                  <Clock className="w-5 h-5 text-[#F5C51B] shrink-0" />
+                  <span className="text-white text-xs">Lundi - Vendredi : 07h30 - 18h00 | Samedi : 08h00 - 13h00</span>
                 </div>
               </div>
             </div>

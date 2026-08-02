@@ -769,3 +769,19 @@ export const DIRECTOR_DATA = {
   image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800',
   quote: 'Chez GILIS BTP, chaque projet représente une responsabilité et une occasion de construire durablement. Nous avons fait le choix d’une approche fondée sur la rigueur, la qualité d’exécution et le respect de nos engagements. Notre ambition ne se limite pas à réaliser des ouvrages. Nous voulons contribuer à la transformation des territoires à travers des infrastructures utiles, solides et adaptées aux besoins des populations.\n\nLa réussite de nos projets repose sur la compétence de nos équipes, la confiance de nos clients et partenaires, ainsi que notre capacité à rechercher constamment des solutions plus performantes.\n\nNous avançons avec une conviction forte : l’excellence ne se proclame pas, elle se construit à chaque étape.'
 };
+
+export const COMPANY_INFO = {
+  name: 'GILIS BTP SARL',
+  rccm: 'RB / COT / 17 B 19856',
+  ifu: '3201710108299',
+  address: 'C / 383 Quartier Aïdjedo Cotonou BENIN',
+  boitePostale: '06 BP 1771 PK3',
+  phones: ['00229 0197086645', '00229 0167676757'],
+  phoneDisplay: '00229 0197086645 / 0167676757',
+  email: 'gilisbtp33@gmail.com',
+  bank: {
+    name: 'NSIA BANK S.A.',
+    accountNumber: '260457498027'
+  }
+};
+

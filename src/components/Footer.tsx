@@ -59,26 +59,32 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onSelectRequestType
             <p className="text-xs text-gray-400 leading-relaxed max-w-xl">
               Entreprise de Bâtiment et Travaux Publics spécialisée dans la réalisation d'infrastructures routières, bâtiments, génie civil, réseaux VRD et ouvrages hydrauliques.
             </p>
+
+
           </div>
 
           {/* Right: Essential Contact Information */}
-          <div className="md:col-span-5 bg-white/5 p-5 rounded-2xl border border-white/10 space-y-2">
+          <div className="md:col-span-5 bg-white/5 p-5 rounded-2xl border border-white/10 space-y-2.5">
             <h5 className="font-title text-xs font-extrabold uppercase tracking-widest text-[#F5C51B]">
-              Contact Siège
+              Siège Social &amp; Coordonnées
             </h5>
             <div className="space-y-2 text-xs text-gray-300">
               <p className="flex items-start">
                 <MapPin className="w-3.5 h-3.5 text-[#F5C51B] mr-2 mt-0.5 shrink-0" />
-                <span>Zone Industrielle &amp; Commerciale, Cotonou, Bénin</span>
+                <span>C / 383 Quartier Aïdjedo Cotonou BENIN — Boîte postale 06 BP 1771 PK3</span>
               </p>
-              <div className="flex flex-wrap gap-4 pt-1 border-t border-white/10">
+              <div className="flex flex-col gap-1.5 pt-2 border-t border-white/10">
                 <p className="flex items-center">
-                  <Phone className="w-3.5 h-3.5 text-[#F5C51B] mr-1.5 shrink-0" />
-                  <span>+229 21 30 00 00</span>
+                  <Phone className="w-3.5 h-3.5 text-[#F5C51B] mr-2 shrink-0" />
+                  <span>00229 0197086645 / 0167676757</span>
                 </p>
                 <p className="flex items-center">
-                  <Mail className="w-3.5 h-3.5 text-[#F5C51B] mr-1.5 shrink-0" />
-                  <span>contact@gilis-btp.com</span>
+                  <Mail className="w-3.5 h-3.5 text-[#F5C51B] mr-2 shrink-0" />
+                  <span className="space-x-2">
+                    <a href="mailto:direction@gilisbtp.com" className="hover:text-[#F5C51B] transition-colors font-medium">direction@gilisbtp.com</a>
+                    <span className="text-gray-500">•</span>
+                    <a href="mailto:gilisbtp33@gmail.com" className="hover:text-[#F5C51B] transition-colors text-gray-400">gilisbtp33@gmail.com</a>
+                  </span>
                 </p>
               </div>
             </div>

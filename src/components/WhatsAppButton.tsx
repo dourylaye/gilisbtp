@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageSquare } from 'lucide-react';
 
 export const WhatsAppButton: React.FC = () => {
-  const whatsappUrl = "https://wa.me/2250700000000?text=Bonjour%20GILIS%20BTP,%20je%20souhaite%20soumettre%20un%20projet%20d'infrastructure.";
+  const whatsappUrl = "https://wa.me/2290197086645?text=Bonjour%20GILIS%20BTP,%20je%20souhaite%20soumettre%20un%20projet%20d'infrastructure.";
 
   return (
     <a
