@@ -75,7 +75,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                 </span>
               </div>
               <span className="text-[11px] font-title italic text-gray-400 hidden sm:inline-block">
-                « Construire l'excellence »
+                « Bâtir l'excellence »
               </span>
             </div>
 

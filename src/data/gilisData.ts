@@ -5,7 +5,7 @@ export const EXPERTISES: Expertise[] = [
     id: 'routes',
     number: '01',
     title: 'Routes et infrastructures routières',
-    image: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&q=80&w=1200',
+    image: '/Images/Pole1.webp',
     summary: 'Conception, bitumage, aménagement et modernisation des axes routiers urbains et interurbains.',
     services: [
       'Études géotechniques et tracé routier',
@@ -19,7 +19,7 @@ export const EXPERTISES: Expertise[] = [
     id: 'batiments',
     number: '02',
     title: 'Construction de bâtiments',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
+    image: '/Images/Pole2.webp',
     summary: 'Édification d’immeubles administratifs, commerciaux, résidentiels et d’équipements publics.',
     services: [
       'Gros œuvre et structures en béton armé',
@@ -33,7 +33,7 @@ export const EXPERTISES: Expertise[] = [
     id: 'genie-civil',
     number: '03',
     title: 'Ouvrages d’art et génie civil',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200',
+    image: '/Images/Pole3.webp',
     summary: 'Réalisation d’infrastructures majeures : ponts, viaducs, dalles de franchissement et structures lourdes.',
     services: [
       'Ponts à poutres, dalles et ouvrages d’art',
@@ -47,7 +47,7 @@ export const EXPERTISES: Expertise[] = [
     id: 'vrd',
     number: '04',
     title: 'Voiries et réseaux divers (VRD)',
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200',
+    image: '/Images/Pole4.webp',
     summary: 'Viabilisation de terrains, aménagement urbain et pose de réseaux techniques souterrains.',
     services: [
       'Terrassement et nivellement de grandes surfaces',
@@ -61,7 +61,7 @@ export const EXPERTISES: Expertise[] = [
     id: 'hydraulique',
     number: '05',
     title: 'Hydraulique et adduction d’eau',
-    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200',
+    image: '/Images/Pole5.webp',
     summary: 'Construction de châteaux d’eau, stations de pompage et réseaux d’adduction d’eau potable.',
     services: [
       'Construction de châteaux d’eau en béton armé',
@@ -75,7 +75,7 @@ export const EXPERTISES: Expertise[] = [
     id: 'rehabilitation',
     number: '06',
     title: 'Réhabilitation et entretien',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200',
+    image: '/Images/Pole6.webp',
     summary: 'Diagnostic, réparation structurelle, rénovation et maintenance préventive des ouvrages.',
     services: [
       'Diagnostic technique et expertise de vétusté',
@@ -443,6 +443,312 @@ export const PROJECTS: Project[] = [
   }
 ];
 
+
+export const PARTICULIERS_PROJECTS: Project[] = [
+  {
+    id: 'pat-1',
+    title: 'Villa Résidentielle Contemporaine R+1',
+    category: 'Particuliers',
+    location: 'Cotonou, Bénin',
+    year: '2021',
+    status: 'Livré',
+    description: 'Construction intégrale d’une villa moderne R+1 alliant lignes architecturales épurées, finitions haut de gamme et optimisation de la lumière naturelle.',
+    client: 'Client Particulier',
+    duration: '8 mois',
+    mission: 'Conception, gros œuvre, second œuvre, étanchéité et aménagement des abords.',
+    works: [
+      'Structure et dalles béton armé',
+      'Maçonnerie de haute précision et enduits fins',
+      'Menuiseries alu double vitrage & baies vitrées',
+      'Terrasse aménagée et étanchéité haute durabilité'
+    ],
+    technicalData: {
+      'Surface bâtie': '350 m²',
+      'Niveaux': 'R+1',
+      'Style': 'Moderne / Contemporain'
+    },
+    results: 'Villa clé en main d’une grande finesse architecturale, livrée dans les délais.',
+    images: ['/Galerie/PAT1.webp']
+  },
+  {
+    id: 'pat-2',
+    title: 'Demeure Familiale avec Parement de Pierre',
+    category: 'Particuliers',
+    location: 'Abomey-Calavi, Bénin',
+    year: '2022',
+    status: 'Livré',
+    description: 'Édification d’une demeure individuelle haut de standing sublimée par des façades en parement de pierre naturelle et une intégration paysagère soignée.',
+    client: 'Client Particulier',
+    duration: '7 mois',
+    mission: 'Études de structure, terrassement, maçonnerie, revêtements extérieurs et second œuvre.',
+    works: [
+      'Fondations profondes et ossature béton armé',
+      'Pose de parements de pierre naturelle en façade',
+      'Éclairage architectural extérieur et spots LED',
+      'Aménagement de la cour pavée et clôture de sécurité'
+    ],
+    technicalData: {
+      'Surface bâtie': '280 m²',
+      'Niveaux': 'Rez-de-chaussée & Mezzanine',
+      'Finition': 'Pierre naturelle & Enduit lisse'
+    },
+    results: 'Ouvrage résidentiel chaleureux et élégant offrant des performances acoustiques et thermiques d’excellence.',
+    images: ['/Galerie/PAT2.webp']
+  },
+  {
+    id: 'pat-3',
+    title: 'Villa Duplex de Standing avec Balcon Verrière',
+    category: 'Particuliers',
+    location: 'Porto-Novo, Bénin',
+    year: '2023',
+    status: 'Livré',
+    description: 'Réalisation d’une villa duplex moderne avec balcon panoramique en garde-corps vitré, pièces de vie spacieuses et terrasse couverte.',
+    client: 'Client Particulier',
+    duration: '10 mois',
+    mission: 'Gros œuvre complet, installation des fluides/électricité, second œuvre et finitions décoratives.',
+    works: [
+      'Structure autoporteuse et planchers précontraints',
+      'Revêtement de sol en grès cérame grand format',
+      'Garde-corps en verre trempé et menuiseries noires mat',
+      'Réseaux électriques encastrés et domotique de base'
+    ],
+    technicalData: {
+      'Surface bâtie': '420 m²',
+      'Niveaux': 'R+1 avec terrasse rooftop',
+      'Style': 'Architectural contemporain'
+    },
+    results: 'Duplex d’exception alliant confort moderne, sécurité et esthétique soignée.',
+    images: ['/Galerie/PAT3.webp']
+  },
+  {
+    id: 'pat-4',
+    title: 'Résidence Privée Haut Standing',
+    category: 'Particuliers',
+    location: 'Cotonou (Zone Résidentielle), Bénin',
+    year: '2023',
+    status: 'Livré',
+    description: 'Construction sur-mesure d’une résidence privée haut de gamme dotée d’une architecture géométrique affirmée et de grands volumes ouverts.',
+    client: 'Client Particulier',
+    duration: '9 mois',
+    mission: 'Terrassement, gros œuvre, étanchéité de toiture terrasse, second œuvre et peinture.',
+    works: [
+      'Fondations isolées sur semelles béton',
+      'Élévations en agglos haute densité et maçonnerie',
+      'Baies coulissantes panoramiques et brise-soleil',
+      'Revêtements de sol et travaux de finitions haut de gamme'
+    ],
+    technicalData: {
+      'Surface bâtie': '390 m²',
+      'Niveaux': 'R+1',
+      'Finition': 'Luxe épuré'
+    },
+    results: 'Résidence de prestige au style affirmation contemporain et à l’étanchéité optimale.',
+    images: ['/Galerie/PAT4.webp']
+  },
+  {
+    id: 'pat-5',
+    title: 'Villa Individuelle & Aménagements Extérieurs',
+    category: 'Particuliers',
+    location: 'Ouidah, Bénin',
+    year: '2024',
+    status: 'Livré',
+    description: 'Projet de construction d’une villa individuelle élégante avec cour pavée, accès viabilisé et clôture périphérique ouvragée.',
+    client: 'Client Particulier',
+    duration: '6 mois',
+    mission: 'Terrassement, gros œuvre, second œuvre et pavage de cour.',
+    works: [
+      'Terrassement et viabilisation de la parcelle',
+      'Structure béton armé et maçonnerie',
+      'Pose de pavés autobloquants et cour aménagée',
+      'Portail métallique sur mesure et clôture'
+    ],
+    technicalData: {
+      'Surface bâtie': '310 m²',
+      'Niveaux': 'Rez-de-chaussée élevé',
+      'Aménagement': 'Cour pavée & Jardin'
+    },
+    results: 'Villa très fonctionnelle au cadre de vie agréable, livrée clé en main.',
+    images: ['/Galerie/PAT5.webp']
+  },
+  {
+    id: 'pat-6',
+    title: 'Grande Propriété Résidentielle Familiale',
+    category: 'Particuliers',
+    location: 'Cotonou, Bénin',
+    year: '2024',
+    status: 'Achevé',
+    description: 'Conception et réalisation d’une grande propriété familiale R+1 comprenant plusieurs suites, espaces de réception et dépendances.',
+    client: 'Client Particulier',
+    duration: '11 mois',
+    mission: 'Maîtrise d’œuvre globale, terrassement, gros œuvre, électricité, plomberie et finitions.',
+    works: [
+      'Terrassement général, fondations et dalles armées',
+      'Réseau d’assainissement complet et drainage pluvial',
+      'Enduits décoratifs de façade et peinture haute résistance',
+      'Installation de sécurité, portail motorisé et clôture'
+    ],
+    technicalData: {
+      'Surface bâtie': '480 m²',
+      'Niveaux': 'R+1',
+      'Capacité': 'Grandes réceptions & Dépendance'
+    },
+    results: 'Superbe propriété d’une solidité exemplaire et au confort optimal pour toute la famille.',
+    images: ['/Galerie/PAT6.png']
+  }
+];
+
+export const ENTREPRISES_PROJECTS: Project[] = [
+  {
+    id: 'ent-1',
+    title: 'Complexe Immobilier & Siège Administratif',
+    category: 'Entreprises',
+    location: 'Cotonou, Bénin',
+    year: '2021',
+    status: 'Livré',
+    description: 'Construction intégrale du siège administratif et commercial d’une entreprise régionale, intégrant espaces tertiaires modulables et salles de conférence.',
+    client: 'Société Commerciale Privée',
+    duration: '12 mois',
+    mission: 'Études architecturales, gros œuvre, second œuvre, climatisation centralisée et sécurité incendie.',
+    works: [
+      'Fondations profondes et structure en béton armé',
+      'Façades architecturales modernes et vitrages mur rideau',
+      'Aménagement de bureaux, salles de réunion et réception',
+      'Installation de groupe électrogène et centrale solaire'
+    ],
+    technicalData: {
+      'Surface utile': '1 200 m²',
+      'Niveaux': 'R+2',
+      'Postes de travail': '120 emplois'
+    },
+    results: 'Livraison clé en main d’un bâtiment tertiaire de haute valeur patrimoniale.',
+    images: ['/Galerie/E1.png']
+  },
+  {
+    id: 'ent-2',
+    title: 'Plateforme Logistique & Piste Industrielle',
+    category: 'Entreprises',
+    location: 'Zone Industrielle, Bénin',
+    year: '2022',
+    status: 'Livré',
+    description: 'Aménagement lourd de pistes d’accès, terrassement et viabilisation pour un hub logistique réservé aux poids lourds.',
+    client: 'Consortium Industriel',
+    duration: '8 mois',
+    mission: 'Terrassement général, assainissement pluvial et pose de revêtement bicouche haute résistance.',
+    works: [
+      'Terrassement et décapage sur 45 000 m²',
+      'Construction de fossés bétonnés et ouvrages de décharge',
+      'Chaussée renforcée pour forte charge à l’essieu (13 tonnes)',
+      'Signalisation industrielle et éclairage autonome'
+    ],
+    technicalData: {
+      'Longueur piste': '4.5 km',
+      'Portance': 'Très forte charge',
+      'Superficie plateforme': '30 000 m²'
+    },
+    results: 'Fluidification des flux logistiques et accès sécurisé 24h/24 pour engins lourds.',
+    images: ['/Galerie/E2.png']
+  },
+  {
+    id: 'ent-3',
+    title: 'Infrastructures VRD & Réseaux d’Entreprises',
+    category: 'Entreprises',
+    location: 'Abomey-Calavi, Bénin',
+    year: '2023',
+    status: 'Livré',
+    description: 'Travaux complets de voiries et réseaux divers (VRD) pour la viabilisation d’un parc d’activités économiques.',
+    client: 'Opérateur Foncier & Industriel',
+    duration: '9 mois',
+    mission: 'Pose de caniveaux grand gabarit, réseaux d’eau potable, électrification et pavage des voies.',
+    works: [
+      'Pose de 3 500 mètres de caniveaux préfabriqués',
+      'Adduction d’eau industrielle et réservoir tampon',
+      'Réseaux de câbles électriques et réservations fibre optique',
+      'Pavage des trottoirs et axes de circulation'
+    ],
+    technicalData: {
+      'Réseau assainissement': '3.5 km',
+      'Superficie couverte': '15 hectares',
+      'Type d’ouvrage': 'VRD complet'
+    },
+    results: 'Parc d’activités entièrement viabilisé conforme aux normes environnementales.',
+    images: ['/Galerie/E3.png']
+  },
+  {
+    id: 'ent-4',
+    title: 'Bâtiment Industriel & Entrepôt de Stockage',
+    category: 'Entreprises',
+    location: 'Porto-Novo, Bénin',
+    year: '2023',
+    status: 'Livré',
+    description: 'Édification d’un entrepôt de stockage à grande portée avec dallage industriel quartzé et quai de déchargement.',
+    client: 'Entreprise d’Import-Export',
+    duration: '7 mois',
+    mission: 'Gros œuvre béton, dallage à haute résistance, charpente métallique et bardage.',
+    works: [
+      'Coulage de dallage industriel lissé au quartz (5 t/m²)',
+      'Montage de charpente métallique à portée libre',
+      'Quais de chargement autonivelants',
+      'Étanchéité et isolation thermique de toiture'
+    ],
+    technicalData: {
+      'Surface couverte': '2 500 m²',
+      'Hauteur sous plafond': '9 mètres',
+      'Charge dallage': '5 tonnes/m²'
+    },
+    results: 'Entrepôt moderne opérationnel offrant un volume de stockage optimal.',
+    images: ['/Galerie/E4.png']
+  },
+  {
+    id: 'ent-5',
+    title: 'Ouvrage de Génie Civil & Fondations Spéciales',
+    category: 'Entreprises',
+    location: 'Ouidah, Bénin',
+    year: '2024',
+    status: 'Livré',
+    description: 'Réalisation d’ouvrages de génie civil lourd comprenant massifs de fondation d’engins et murs de soutènement.',
+    client: 'Groupe BTP & Transport',
+    duration: '10 mois',
+    mission: 'Études géotechniques approfondies, forage de pieux et coulage de massifs de fondation.',
+    works: [
+      'Forage et coulage de pieux armés ancrés en profondeur',
+      'Massifs en béton armé vibré haute performance',
+      'Murs de soutènement et stabilisation de talus',
+      'Essais de portance et contrôle ultrasons'
+    ],
+    technicalData: {
+      'Pieux de fondation': '48 unités',
+      'Volume béton': '1 800 m³',
+      'Classe béton': 'C35/45'
+    },
+    results: 'Infrastructure de génie civil certifiée pour résister aux sollicitations extrêmes.',
+    images: ['/Galerie/E5.png']
+  },
+  {
+    id: 'ent-6',
+    title: 'Zone Tertiaire & Campus d’Innovation',
+    category: 'Entreprises',
+    location: 'Cotonou, Bénin',
+    year: '2024',
+    status: 'Achevé',
+    description: 'Construction d’un complexe immobilier d’affaires moderne accueillant des espaces de coworking et sièges d’entreprises.',
+    client: 'Groupe Privé Partenaire',
+    duration: '11 mois',
+    mission: 'Gros œuvre, second œuvre, intégration énergétique et aménagements paysagers.',
+    works: [
+      'Structure poteaux-poutres et dalles alvéolaires',
+      'Agencements intérieurs acoustiques et modulables',
+      'Espaces extérieurs paysagers et terrasses en teck',
+      'Contrôle d’accès biométrique et vidéosurveillance'
+    ],
+    technicalData: {
+      'Surface bâtie': '1 800 m²',
+      'Niveaux': 'R+3',
+      'Certification': 'HQE / Efficacité énergétique'
+    },
+    results: 'Campus d’innovation emblématique livré dans le respect des exigences esthétiques et techniques.',
+    images: ['/Galerie/E6.png']
+  }
+];
 
 export const PARTNERS: PartnerLogo[] = [
   { id: 'p1', name: 'Ministère des Equipements', category: 'Institutionnel', logoText: 'MINISTÈRE DES ÉQUIPEMENTS' },

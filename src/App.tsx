@@ -54,19 +54,19 @@ export default function App() {
         <WhyChooseUs />
 
         {/* 9. Section Clients et partenaires (Ils nous font confiance) */}
-        <PartnersSection />
+        <PartnersSection onSelectRequestType={handleSelectRequestType} />
 
         {/* 10. Section Lancement & Étude de vos chantiers */}
         <CallToActionBanner onSelectRequestType={handleSelectRequestType} />
 
-        {/* 11. Section Carrières (Rejoignez-nous) */}
-        <CareersSection />
-
-        {/* 12. Section Galerie de projets */}
+        {/* 11. Section Galerie de projets */}
         <ProjectsGallery />
 
-        {/* 13. Section Contact & Devis */}
+        {/* 12. Section Contact & Devis */}
         <ContactSection selectedRequestType={requestType} />
+
+        {/* 13. Section Carrières (Rejoignez-nous) */}
+        <CareersSection />
       </main>
 
       {/* 14. Footer */}

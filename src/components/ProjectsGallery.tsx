@@ -1,17 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { PROJECTS } from '../data/gilisData';
+import { PARTICULIERS_PROJECTS, ENTREPRISES_PROJECTS } from '../data/gilisData';
 import { Project } from '../types';
 import { ProjectDetailModal } from './ProjectDetailModal';
-import { MapPin, Calendar, ExternalLink, Clock, Sparkles } from 'lucide-react';
+import { MapPin, Calendar, Sparkles } from 'lucide-react';
 
 interface GalleryRowProps {
   title: string;
-  subtitle: string;
   projects: Project[];
   onSelectProject: (p: Project) => void;
 }
 
-const GalleryRow: React.FC<GalleryRowProps> = ({ title, subtitle, projects, onSelectProject }) => {
+const GalleryRow: React.FC<GalleryRowProps> = ({ title, projects, onSelectProject }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -26,7 +25,6 @@ const GalleryRow: React.FC<GalleryRowProps> = ({ title, subtitle, projects, onSe
 
     const scrollStep = () => {
       if (!isPaused && el) {
-        // When we've scrolled past half (the first set of projects), reset by half
         if (el.scrollLeft >= el.scrollWidth / 2) {
           el.scrollLeft -= el.scrollWidth / 2;
         } else {
@@ -41,27 +39,17 @@ const GalleryRow: React.FC<GalleryRowProps> = ({ title, subtitle, projects, onSe
     return () => cancelAnimationFrame(animationFrameId);
   }, [isPaused]);
 
-  const oldestYear = projects[0]?.year || '';
-  const newestYear = projects[projects.length - 1]?.year || '';
-
   return (
     <div className="space-y-4 py-4">
       {/* Section Sub-header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200/80 pb-3">
-        <div className="flex items-center space-x-3">
-          <div className="w-2.5 h-8 bg-[#F5C51B] rounded-r-md"></div>
-          <div>
-            <h3 className="font-title text-xl sm:text-2xl font-extrabold text-[#0E2232] tracking-tight">
-              {title}
-            </h3>
-            <p className="text-xs text-gray-500 font-medium">
-              {subtitle}
-            </p>
-          </div>
-        </div>
+      <div className="flex items-center space-x-3 border-b border-gray-200/80 pb-3">
+        <div className="w-2.5 h-8 bg-[#F5C51B] rounded-r-md"></div>
+        <h3 className="font-title text-xl sm:text-2xl font-extrabold text-[#0E2232] tracking-tight">
+          {title}
+        </h3>
       </div>
 
-      {/* Single Horizontal Row - Auto-scrolling from oldest to newest - Large Cards */}
+      {/* Single Horizontal Row - Auto-scrolling - Large Cards */}
       <div 
         ref={scrollRef}
         onMouseEnter={() => setIsPaused(true)}
@@ -86,7 +74,7 @@ const GalleryRow: React.FC<GalleryRowProps> = ({ title, subtitle, projects, onSe
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0E2232]/95 via-[#0E2232]/35 to-transparent"></div>
 
-              {/* Chronological Year Badge - Prominent Gold */}
+              {/* Chronological Year Badge */}
               <div className="absolute top-4 left-4 bg-[#F5C51B] text-[#0E2232] text-xs font-title font-extrabold px-3.5 py-1.5 rounded-full shadow-lg border border-[#0E2232]/20 flex items-center space-x-1.5">
                 <Calendar className="w-3.5 h-3.5" />
                 <span>An {project.year}</span>
@@ -109,19 +97,10 @@ const GalleryRow: React.FC<GalleryRowProps> = ({ title, subtitle, projects, onSe
               </div>
             </div>
 
-            {/* Card Content Footer */}
-            <div className="p-5 bg-white space-y-3">
-              <p className="text-xs sm:text-sm text-gray-600 line-clamp-2 leading-relaxed">
-                {project.description}
-              </p>
-              
-              <div className="pt-2 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#0E2232]">
-                <span className="text-gray-500 font-normal">{project.category}</span>
-                <span className="text-[#0E2232] group-hover:text-[#B8860B] transition-colors flex items-center space-x-1 uppercase text-[11px] tracking-wider font-extrabold">
-                  <span>Découvrir le projet</span>
-                  <ExternalLink className="w-3.5 h-3.5 ml-1" />
-                </span>
-              </div>
+            {/* Clean Card Footer */}
+            <div className="p-4 bg-white flex items-center justify-between text-xs font-bold text-[#0E2232]">
+              <span className="text-[#0E2232] font-extrabold tracking-wide uppercase text-[11px]">{project.category}</span>
+              <span className="text-xs text-gray-400 font-semibold">{project.year}</span>
             </div>
           </div>
         ))}
@@ -133,18 +112,8 @@ const GalleryRow: React.FC<GalleryRowProps> = ({ title, subtitle, projects, onSe
 export const ProjectsGallery: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // Group projects into domain sections sorted strictly from oldest to newest year
-  const routesVrdProjects = PROJECTS.filter(
-    (p) => p.category === 'Routes' || p.category === 'VRD'
-  ).sort((a, b) => parseInt(a.year) - parseInt(b.year));
-
-  const batimentsProjects = PROJECTS.filter(
-    (p) => p.category === 'Bâtiments'
-  ).sort((a, b) => parseInt(a.year) - parseInt(b.year));
-
-  const genieCivilHydrauliqueProjects = PROJECTS.filter(
-    (p) => p.category === 'Génie civil' || p.category === 'Hydraulique'
-  ).sort((a, b) => parseInt(a.year) - parseInt(b.year));
+  const entreprisesProjects = [...ENTREPRISES_PROJECTS].sort((a, b) => parseInt(a.year) - parseInt(b.year));
+  const particuliersProjects = [...PARTICULIERS_PROJECTS].sort((a, b) => parseInt(a.year) - parseInt(b.year));
 
   return (
     <section id="projets" className="py-20 lg:py-28 bg-[#FFFFFF] text-[#06090B] relative overflow-hidden">
@@ -155,39 +124,26 @@ export const ProjectsGallery: React.FC = () => {
           <div className="inline-flex items-center space-x-2 bg-[#0E2232]/10 text-[#0E2232] px-4 py-1.5 rounded-full border border-[#0E2232]/15 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#0E2232]" />
             <span className="text-xs uppercase tracking-widest font-extrabold">
-              Galerie Chronologique
+              Galerie de Nos Réalisations
             </span>
           </div>
 
           <h2 className="font-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0E2232] tracking-tight leading-tight">
-            Chantiers &amp; Ouvrages d'Art Majoritaires
+            Chantiers, Villas &amp; Grands Ouvrages
           </h2>
-
-          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-            Défilement continu par secteur, du projet le plus ancien au plus récent. Survolez ou touchez une carte pour consulter les spécifications techniques.
-          </p>
         </div>
 
-        {/* Domain Sections - Single Horizontal Row per Section */}
+        {/* 2 Main Rows: PARTICULIERS & ENTREPRISES */}
         <div className="space-y-10">
           <GalleryRow
-            title="01. Infrastructures Routières & VRD"
-            subtitle="Autostrades, voiries urbaines, viabilisation et aménagement de zones industrielles"
-            projects={routesVrdProjects}
+            title="PARTICULIERS"
+            projects={particuliersProjects}
             onSelectProject={(p) => setSelectedProject(p)}
           />
 
           <GalleryRow
-            title="02. Bâtiments & Équipements Publics"
-            subtitle="Cités administratives, centres hospitaliers, campus et tours tertiaires"
-            projects={batimentsProjects}
-            onSelectProject={(p) => setSelectedProject(p)}
-          />
-
-          <GalleryRow
-            title="03. Génie Civil, Ouvrages d'Art & Hydraulique"
-            subtitle="Ponts mixtes, viaducs, châteaux d'eau, stations de pompage et réseaux AEP"
-            projects={genieCivilHydrauliqueProjects}
+            title="ENTREPRISES"
+            projects={entreprisesProjects}
             onSelectProject={(p) => setSelectedProject(p)}
           />
         </div>

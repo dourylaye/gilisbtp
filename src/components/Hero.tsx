@@ -7,9 +7,9 @@ interface HeroProps {
 }
 
 const HERO_IMAGES = [
-  'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&q=80&w=2000',
-  'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000',
-  'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=2000'
+  '/Images/slider1.webp',
+  '/Images/slider2.webp',
+  '/Images/slider3.webp'
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onSelectRequestType }) => {
@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({ onSelectRequestType }) => {
 
         {/* Titre Principal H1 - Modéré & Élégant */}
         <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight max-w-3xl mx-auto">
-          Construire <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F5C51B] via-amber-300 to-[#F5C51B]">l’Excellence</span> d’Infrastructures Durables.
+          Bâtir <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F5C51B] via-amber-300 to-[#F5C51B]">l’Excellence</span> d’Infrastructures Durables.
         </h1>
 
         {/* Texte descriptif - Réduit et lisible */}

@@ -106,8 +106,8 @@ export const KeyStatsSection: React.FC = () => {
             icon={Globe}
           />
           <StatCounter
-            value={50000}
-            prefix="+"
+            value={1000}
+            prefix="+ "
             suffix=" km"
             label="Km de Routes Réalisées"
             sublabel="Ouvrages routiers & pistes d’aménagement"

@@ -9,6 +9,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [isLightBg, setIsLightBg] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   const navLinks = [
     { id: 'hero', label: 'ACCUEIL' },
@@ -112,13 +113,21 @@ export const Navbar: React.FC<NavbarProps> = () => {
             className="flex items-center group cursor-pointer py-1 shrink-0"
             id="header-logo"
           >
-            <img 
-              src="/Images/LogoHorizontal.webp" 
-              alt="GILIS BTP" 
-              className={`h-10 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
-                isLightBg ? 'brightness-100 invert-0' : 'brightness-0 invert'
-              }`}
-            />
+            {!logoError ? (
+              <img 
+                src="/Images/LogoHorizontal.webp" 
+                alt="GILIS BTP" 
+                className={`h-10 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
+                  !isLightBg ? 'brightness-0 invert' : ''
+                }`}
+                onError={() => setLogoError(true)}
+              />
+            ) : (
+              <div className="flex items-center space-x-2 font-black font-title text-xl tracking-wider">
+                <span className="bg-[#F5C51B] text-[#0E2232] px-2.5 py-1 rounded-md font-black shadow-sm">GILIS</span>
+                <span className={isLightBg ? 'text-[#0E2232]' : 'text-white'}>BTP</span>
+              </div>
+            )}
           </a>
 
           {/* Desktop Navigation Links - Uppercase & Aligned Right (Compact space) */}

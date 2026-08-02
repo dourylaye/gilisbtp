@@ -151,14 +151,14 @@ export const AboutSection: React.FC = () => {
                   <span>Puissance Matérielle &amp; Logistique</span>
                 </div>
                 <h4 className="font-title text-lg font-extrabold text-white">
-                  Parc de +1 000 Engins Lourds en Propre
+                  +50 engins et équipements
                 </h4>
                 <p className="text-xs text-gray-300 leading-relaxed">
-                  Centrales d’enrobé mobiles, centrales à béton, finisseurs d’asphalte, pelles hydrauliques et ateliers mécaniques 24/7 pour un déploiement sans délai.
+                  Un parc performant comprenant 20 bétonnières, des panneaux de coffrage et des équipements adaptés à la réalisation de chantiers de toutes envergures.
                 </p>
                 <div className="pt-2 flex items-center space-x-2 text-[11px] text-gray-400 font-medium">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#F5C51B]" />
-                  <span>Centrales d'enrobé • Finisseurs • Pelles &amp; Bulldozers</span>
+                  <span>20 bétonnières • Coffrages • Équipements de chantier</span>
                 </div>
               </div>
             </div>

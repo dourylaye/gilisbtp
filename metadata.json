@@ -1,6 +1,6 @@
 {
   "name": "GILIS BTP",
-  "description": "GILIS BTP | Leader en Bâtiments, Travaux Publics, Génie Civil et Infrastructures. Construire l'excellence.",
+  "description": "GILIS BTP | Leader en Bâtiments, Travaux Publics, Génie Civil et Infrastructures. Bâtir l'excellence.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

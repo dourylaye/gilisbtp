@@ -11,7 +11,9 @@ export type ProjectCategory =
   | 'Bâtiments'
   | 'Génie civil'
   | 'Hydraulique'
-  | 'VRD';
+  | 'VRD'
+  | 'Particuliers'
+  | 'Entreprises';
 
 export interface Project {
   id: string;

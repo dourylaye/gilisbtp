@@ -73,7 +73,7 @@ export const DirectorMessage: React.FC = () => {
                 <p class="font-subtitle text-xs text-[#F5C51B]">{DIRECTOR_DATA.title}</p>
               </div>
               <div class="font-subtitle italic text-xs text-gray-400">
-                GILIS BTP — Construire l'excellence
+                GILIS BTP — Bâtir l'excellence
               </div>
             </div>
 
