@@ -1,12 +1,15 @@
 import React from 'react';
 import { ChevronRight, FileCheck } from 'lucide-react';
 import { RequestType } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 interface CallToActionBannerProps {
   onSelectRequestType?: (type: RequestType) => void;
 }
 
 export const CallToActionBanner: React.FC<CallToActionBannerProps> = ({ onSelectRequestType }) => {
+  const { t } = useLanguage();
+
   const handleAction = (type: RequestType) => {
     if (onSelectRequestType) {
       onSelectRequestType(type);
@@ -26,13 +29,16 @@ export const CallToActionBanner: React.FC<CallToActionBannerProps> = ({ onSelect
           
           <div className="space-y-3 max-w-2xl text-center lg:text-left">
             <span className="font-subtitle text-xs text-[#F5C51B] uppercase tracking-widest font-bold">
-              Lancement &amp; Étude de vos chantiers
+              {t("Lancement & Étude de vos chantiers", "Project Launch & Feasibility Study")}
             </span>
             <h2 className="font-title text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-              Vous avez un projet d’infrastructure ou de bâtiment ?
+              {t("Vous avez un projet d’infrastructure ou de bâtiment ?", "Do you have an infrastructure or building project?")}
             </h2>
             <p className="text-sm sm:text-base text-gray-300">
-              Nos ingénieurs et métreurs étudient votre dossier sous 48h. Soumettez vos plans ou demandez une estimation financière gratuite.
+              {t(
+                "Nos ingénieurs et métreurs étudient votre dossier sous 48h. Soumettez vos plans ou demandez une estimation financière gratuite.",
+                "Our engineers review your requirements within 48 hours. Submit your blueprints or request a free financial quote."
+              )}
             </p>
           </div>
 
@@ -41,7 +47,7 @@ export const CallToActionBanner: React.FC<CallToActionBannerProps> = ({ onSelect
               onClick={() => handleAction('Demande de devis')}
               className="w-full sm:w-72 px-7 py-4 bg-[#F5C51B] hover:bg-[#e0b213] text-[#0A1622] font-bold text-sm rounded-lg shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer"
             >
-              <span>Demander un Devis Gratuit</span>
+              <span>{t("Demander un Devis Gratuit", "Request a Free Quote")}</span>
               <ChevronRight className="w-4 h-4 text-[#0A1622]" />
             </button>
 
@@ -49,7 +55,7 @@ export const CallToActionBanner: React.FC<CallToActionBannerProps> = ({ onSelect
               onClick={() => handleAction('Soumission de projet')}
               className="w-full sm:w-72 px-7 py-4 bg-white/10 hover:bg-white/20 text-white font-bold text-sm rounded-lg border border-white/20 hover:border-[#F5C51B] transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer backdrop-blur-md"
             >
-              <span>Soumettre un Projet</span>
+              <span>{t("Soumettre un Projet", "Submit a Project")}</span>
               <FileCheck className="w-4 h-4 text-[#F5C51B]" />
             </button>
           </div>

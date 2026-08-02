@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ArrowDown } from 'lucide-react';
 import { RequestType } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 interface HeroProps {
   onSelectRequestType?: (type: RequestType) => void;
@@ -13,6 +14,7 @@ const HERO_IMAGES = [
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onSelectRequestType }) => {
+  const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -81,18 +83,25 @@ export const Hero: React.FC<HeroProps> = ({ onSelectRequestType }) => {
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#F5C51B]"></span>
           </span>
           <span className="font-subtitle text-xs sm:text-sm text-[#F5C51B] font-semibold tracking-wider uppercase">
-            24 Chantiers Actifs • Bénin et Afrique de l’Ouest
+            {t("24 Chantiers Actifs • Bénin et Afrique de l’Ouest", "24 Active Worksites • Benin & West Africa")}
           </span>
         </div>
 
         {/* Titre Principal H1 - Modéré & Élégant */}
         <h1 className="font-title text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight max-w-3xl mx-auto">
-          Bâtir <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F5C51B] via-amber-300 to-[#F5C51B]">l’Excellence</span> d’Infrastructures Durables.
+          {t("Bâtir ", "Building ")}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F5C51B] via-amber-300 to-[#F5C51B]">
+            {t("l’Excellence", "Excellence")}
+          </span>
+          {t(" d’Infrastructures Durables.", " for Sustainable Infrastructure.")}
         </h1>
 
         {/* Texte descriptif - Réduit et lisible */}
         <p className="text-sm sm:text-base text-gray-200 font-normal leading-relaxed max-w-2xl mx-auto">
-          GILIS BTP déploie son ingénierie de pointe pour la conception, la construction et la réhabilitation d’ouvrages routiers, de bâtiments majeurs et de réseaux hydrauliques.
+          {t(
+            "GILIS BTP déploie son ingénierie de pointe pour la conception, la construction et la réhabilitation d’ouvrages routiers, de bâtiments majeurs et de réseaux hydrauliques.",
+            "GILIS BTP delivers high-level engineering for the design, construction, and rehabilitation of roads, major buildings, and hydraulic networks."
+          )}
         </p>
 
         {/* Boutons d'action */}
@@ -102,7 +111,7 @@ export const Hero: React.FC<HeroProps> = ({ onSelectRequestType }) => {
             onClick={handleSoumettreClick}
             className="w-full sm:w-auto px-7 py-3.5 bg-[#F5C51B] hover:bg-[#e0b213] text-[#0A1622] rounded-md font-bold text-sm sm:text-base transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center space-x-2 group cursor-pointer"
           >
-            <span>Soumettre un projet</span>
+            <span>{t("Soumettre un projet", "Submit a project")}</span>
             <ChevronRight className="w-5 h-5 text-[#0A1622] group-hover:translate-x-1 transition-transform" />
           </button>
 
@@ -111,7 +120,7 @@ export const Hero: React.FC<HeroProps> = ({ onSelectRequestType }) => {
             onClick={handleExpertisesClick}
             className="w-full sm:w-auto px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-[#F5C51B] rounded-md font-semibold text-sm sm:text-base transition-all duration-300 flex items-center justify-center space-x-2 group cursor-pointer backdrop-blur-md"
           >
-            <span>Explorer nos domaines d’intervention</span>
+            <span>{t("Explorer nos domaines d’intervention", "Explore our areas of expertise")}</span>
             <ChevronRight className="w-5 h-5 text-[#F5C51B] group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
@@ -139,7 +148,7 @@ export const Hero: React.FC<HeroProps> = ({ onSelectRequestType }) => {
           className="inline-flex flex-col items-center text-xs text-gray-300 hover:text-[#F5C51B] transition-colors group cursor-pointer"
         >
           <span className="mb-1.5 uppercase tracking-widest text-[11px] font-semibold text-gray-300 group-hover:text-[#F5C51B]">
-            Découvrir notre site
+            {t("Découvrir notre site", "Discover our site")}
           </span>
           <ArrowDown className="w-4 h-4 animate-bounce text-[#F5C51B]" />
         </a>

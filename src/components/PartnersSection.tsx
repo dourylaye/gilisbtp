@@ -1,12 +1,15 @@
 import React from 'react';
 import { Home, Building2, Factory, Landmark, HardHat, ShieldCheck, Award, Briefcase, Quote, FileCheck } from 'lucide-react';
 import { RequestType } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 interface PartnersSectionProps {
   onSelectRequestType?: (type: RequestType) => void;
 }
 
 export const PartnersSection: React.FC<PartnersSectionProps> = ({ onSelectRequestType }) => {
+  const { t } = useLanguage();
+
   const handleAction = (type: RequestType) => {
     if (onSelectRequestType) {
       onSelectRequestType(type);
@@ -16,65 +19,66 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({ onSelectReques
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
   const row1Squares = [
     {
       id: 'sq1',
-      title: 'Particuliers',
-      subtitle: 'Maisons & Villas de standing',
+      title: t('Particuliers', 'Private Individuals'),
+      subtitle: t('Maisons & Villas de standing', 'High-end Houses & Villas'),
       icon: Home,
-      badge: 'Résidentiel'
+      badge: t('Résidentiel', 'Residential')
     },
     {
       id: 'sq2',
-      title: 'Promoteurs Immobiliers',
-      subtitle: 'Résidences & Bâtiments R+X',
+      title: t('Promoteurs Immobiliers', 'Property Developers'),
+      subtitle: t('Résidences & Bâtiments R+X', 'Residential & Multi-Story Buildings'),
       icon: Building2,
-      badge: 'Immobilier'
+      badge: t('Immobilier', 'Real Estate')
     },
     {
       id: 'sq3',
-      title: 'Entreprises & Industries',
-      subtitle: 'Sièges, Entrepôts & Usines',
+      title: t('Entreprises & Industries', 'Corporate & Industrial'),
+      subtitle: t('Sièges, Entrepôts & Usines', 'Headquarters, Warehouses & Plants'),
       icon: Factory,
-      badge: 'Tertiaire'
+      badge: t('Tertiaire', 'Commercial')
     },
     {
       id: 'sq4',
-      title: 'Institutions Publiques',
-      subtitle: 'Infrastructures & Ministères',
+      title: t('Institutions Publiques', 'Public Institutions'),
+      subtitle: t('Infrastructures & Ministères', 'Infrastructure & Ministries'),
       icon: Landmark,
-      badge: 'Public'
+      badge: t('Public', 'Public')
     }
   ];
 
   const row2Squares = [
     {
       id: 'sq5',
-      title: 'Génie Civil & VRD',
-      subtitle: 'Routes, Ponts & Réseaux',
+      title: t('Génie Civil & VRD', 'Civil Engineering & VRD'),
+      subtitle: t('Routes, Ponts & Réseaux', 'Roads, Bridges & Utilities'),
       icon: HardHat,
-      badge: 'Ouvrages'
+      badge: t('Ouvrages', 'Structures')
     },
     {
       id: 'sq6',
-      title: 'BOAD & Financeurs',
-      subtitle: 'Partenaires Financiers',
+      title: t('BOAD & Financeurs', 'BOAD & Lenders'),
+      subtitle: t('Partenaires Financiers', 'Financial Partners'),
       icon: ShieldCheck,
-      badge: 'Bailleurs'
+      badge: t('Bailleurs', 'Donors')
     },
     {
       id: 'sq7',
-      title: 'Maîtres d’Ouvrage',
-      subtitle: 'Projets Majeurs d’Envergure',
+      title: t('Maîtres d’Ouvrage', 'Project Owners'),
+      subtitle: t('Projets Majeurs d’Envergure', 'Large Scale Infrastructure'),
       icon: Award,
-      badge: 'Supervision'
+      badge: t('Supervision', 'Supervision')
     },
     {
       id: 'sq8',
-      title: 'Fournisseurs Agrées',
-      subtitle: 'Ciment, Béton & Équipements',
+      title: t('Fournisseurs Agrées', 'Certified Suppliers'),
+      subtitle: t('Ciment, Béton & Équipements', 'Cement, Concrete & Equipment'),
       icon: Briefcase,
-      badge: 'Qualité'
+      badge: t('Qualité', 'Quality')
     }
   ];
 
@@ -95,11 +99,11 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({ onSelectReques
           <div className="inline-flex items-center space-x-2 bg-white px-3.5 py-1.5 rounded-full border border-gray-200 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-[#F5C51B] animate-pulse"></span>
             <span className="text-xs uppercase tracking-widest font-extrabold text-[#0E2232]">
-              Ils nous font confiance
+              {t("Ils nous font confiance", "They trust us")}
             </span>
           </div>
           <h2 className="font-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0E2232] tracking-tight">
-            Des Partenariats Solides, une Même Exigence
+            {t("Des Partenariats Solides, une Même Exigence", "Solid Partnerships, One Standard of Excellence")}
           </h2>
           <div className="gold-line-h w-20 mx-auto my-3"></div>
         </div>
@@ -114,18 +118,27 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({ onSelectReques
               
               <div className="space-y-5 text-gray-700 leading-relaxed text-sm sm:text-base">
                 <p className="font-medium text-[#0E2232]">
-                  Des particuliers nous confient la construction de leurs espaces de vie. Des promoteurs immobiliers font appel à notre expertise pour bâtir leurs résidences, bâtiments et immeubles. Des entreprises et institutions comptent sur nous pour réaliser des infrastructures solides, fonctionnelles et durables.
+                  {t(
+                    "Des particuliers nous confient la construction de leurs espaces de vie. Des promoteurs immobiliers font appel à notre expertise pour bâtir leurs résidences, bâtiments et immeubles. Des entreprises et institutions comptent sur nous pour réaliser des infrastructures solides, fonctionnelles et durables.",
+                    "Homeowners trust us with their living spaces. Property developers rely on our expertise to build residential complexes and high-rises. Companies and public institutions count on us to build durable, high-performance infrastructure."
+                  )}
                 </p>
 
                 <p className="text-gray-600">
-                  Du projet familial au chantier d’envergure, GILIS BTP transforme chaque ambition en une réalisation conçue pour durer.
+                  {t(
+                    "Du projet familial au chantier d’envergure, GILIS BTP transforme chaque ambition en une réalisation conçue pour durer.",
+                    "From private homes to landmark infrastructure projects, GILIS BTP turns every blueprint into a lasting reality."
+                  )}
                 </p>
 
                 {/* Styled Highlight Banner */}
                 <div className="mt-6 pt-6 border-t border-gray-100 bg-gradient-to-r from-[#0E2232] to-[#122A3F] text-white p-5 rounded-xl relative shadow-sm">
                   <Quote className="w-8 h-8 text-[#F5C51B]/30 absolute top-3 right-3 pointer-events-none" />
                   <p className="font-title text-base sm:text-lg font-bold text-[#F5C51B] tracking-wide relative z-10">
-                    « Des projets différents. Une même exigence : bâtir l’excellence. »
+                    {t(
+                      "« Des projets différents. Une même exigence : bâtir l’excellence. »",
+                      "“Diverse projects. One uncompromising standard: building excellence.”"
+                    )}
                   </p>
                 </div>
 
@@ -135,7 +148,7 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({ onSelectReques
                     onClick={() => handleAction('Soumission de projet')}
                     className="px-6 py-3.5 bg-[#F5C51B] hover:bg-[#e0b213] text-[#0A1622] font-extrabold text-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2.5 cursor-pointer group"
                   >
-                    <span>Soumettre un projet</span>
+                    <span>{t("Soumettre un projet", "Submit a project")}</span>
                     <FileCheck className="w-4 h-4 text-[#0A1622] group-hover:scale-110 transition-transform" />
                   </button>
                 </div>

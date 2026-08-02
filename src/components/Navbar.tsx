@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface NavbarProps {
   onSelectRequestType?: (type: any) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = () => {
+  const { language, setLanguage, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [isLightBg, setIsLightBg] = useState(false);
   const [logoError, setLogoError] = useState(false);
 
   const navLinks = [
-    { id: 'hero', label: 'ACCUEIL' },
-    { id: 'apropos', label: 'À PROPOS' },
-    { id: 'expertises', label: 'EXPERTISES' },
-    { id: 'methode', label: 'MÉTHODE' },
-    { id: 'projets', label: 'PROJETS' },
-    { id: 'engagements', label: 'ENGAGEMENTS' },
-    { id: 'carrieres', label: 'CARRIÈRES' },
-    { id: 'contact', label: 'CONTACT' },
+    { id: 'hero', label: t('ACCUEIL', 'HOME') },
+    { id: 'apropos', label: t('À PROPOS', 'ABOUT') },
+    { id: 'expertises', label: t('EXPERTISES', 'SERVICES') },
+    { id: 'methode', label: t('MÉTHODE', 'METHOD') },
+    { id: 'projets', label: t('PROJETS', 'PROJECTS') },
+    { id: 'engagements', label: t('ENGAGEMENTS', 'COMMITMENTS') },
+    { id: 'carrieres', label: t('CARRIÈRES', 'CAREERS') },
+    { id: 'contact', label: t('CONTACT', 'CONTACT') },
   ];
 
   useEffect(() => {
@@ -158,10 +160,62 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 </a>
               );
             })}
+
+            {/* Language Switcher Button (FR / EN) */}
+            <div className="flex items-center space-x-1 ml-2 pl-2 border-l border-white/20">
+              <button
+                onClick={() => setLanguage('fr')}
+                className={`px-2 py-1 text-xs font-black rounded transition-all duration-200 ${
+                  language === 'fr'
+                    ? 'bg-[#F5C51B] text-[#0E2232] shadow-sm'
+                    : isLightBg
+                      ? 'text-[#0E2232]/70 hover:text-[#0E2232] hover:bg-black/5'
+                      : 'text-white/70 hover:text-white hover:bg-white/10'
+                }`}
+                title="Français"
+                aria-label="Passer en français"
+              >
+                FR
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-2 py-1 text-xs font-black rounded transition-all duration-200 ${
+                  language === 'en'
+                    ? 'bg-[#F5C51B] text-[#0E2232] shadow-sm'
+                    : isLightBg
+                      ? 'text-[#0E2232]/70 hover:text-[#0E2232] hover:bg-black/5'
+                      : 'text-white/70 hover:text-white hover:bg-white/10'
+                }`}
+                title="English"
+                aria-label="Switch to English"
+              >
+                EN
+              </button>
+            </div>
           </nav>
 
-          {/* Mobile menu button */}
-          <div className="flex lg:hidden items-center ml-auto">
+          {/* Mobile menu button & Language switch */}
+          <div className="flex lg:hidden items-center space-x-2 ml-auto">
+            {/* Mobile language switch */}
+            <div className="flex items-center bg-black/10 rounded-lg p-0.5 border border-white/10">
+              <button
+                onClick={() => setLanguage('fr')}
+                className={`px-2 py-1 text-[11px] font-black rounded ${
+                  language === 'fr' ? 'bg-[#F5C51B] text-[#0E2232]' : isLightBg ? 'text-gray-800' : 'text-white'
+                }`}
+              >
+                FR
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-2 py-1 text-[11px] font-black rounded ${
+                  language === 'en' ? 'bg-[#F5C51B] text-[#0E2232]' : isLightBg ? 'text-gray-800' : 'text-white'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
             <button
               id="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -170,7 +224,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   ? 'text-[#0E2232] hover:bg-black/5'
                   : 'text-white hover:text-[#F5C51B] hover:bg-white/10'
               }`}
-              aria-label="Ouvrir le menu"
+              aria-label={t("Ouvrir le menu", "Open menu")}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -204,6 +258,31 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 {link.label}
               </a>
             ))}
+
+            <div className="pt-3 border-t border-gray-200/20 flex items-center justify-between px-3">
+              <span className="text-xs font-semibold flex items-center space-x-1.5 opacity-80">
+                <Globe className="w-4 h-4 text-[#F5C51B]" />
+                <span>{t('Langue / Language', 'Language / Langue')}</span>
+              </span>
+              <div className="flex items-center space-x-2">
+                <button
+                  onClick={() => setLanguage('fr')}
+                  className={`px-3 py-1 text-xs font-bold rounded ${
+                    language === 'fr' ? 'bg-[#F5C51B] text-[#0E2232]' : 'bg-white/10 text-gray-300'
+                  }`}
+                >
+                  Français
+                </button>
+                <button
+                  onClick={() => setLanguage('en')}
+                  className={`px-3 py-1 text-xs font-bold rounded ${
+                    language === 'en' ? 'bg-[#F5C51B] text-[#0E2232]' : 'bg-white/10 text-gray-300'
+                  }`}
+                >
+                  English
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       )}

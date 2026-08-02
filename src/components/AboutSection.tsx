@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Eye, Target, Rocket, ArrowUpRight, CheckCircle2, Truck } from 'lucide-react';
 import { AboutModal } from './AboutModal';
+import { useLanguage } from '../context/LanguageContext';
 
 export const AboutSection: React.FC = () => {
+  const { t } = useLanguage();
   const [modalOpen, setModalOpen] = useState(false);
   const [hoveredPillar, setHoveredPillar] = useState<number | null>(null);
 
@@ -11,22 +13,31 @@ export const AboutSection: React.FC = () => {
       id: 1,
       icon: Eye,
       badge: '01 • Vision',
-      title: 'Notre Vision',
-      desc: 'Être la référence sous-régionale en matière d’ingénierie, de construction durable et de modernisation des infrastructures routières et urbaines en Afrique de l’Ouest.'
+      title: t('Notre Vision', 'Our Vision'),
+      desc: t(
+        'Être la référence sous-régionale en matière d’ingénierie, de construction durable et de modernisation des infrastructures routières et urbaines en Afrique de l’Ouest.',
+        'To be the sub-regional reference in engineering, sustainable construction, and modernization of road and urban infrastructure in West Africa.'
+      )
     },
     {
       id: 2,
       icon: Target,
       badge: '02 • Mission',
-      title: 'Notre Mission',
-      desc: 'Concevoir et réaliser des grands travaux de haute qualité technique en mobilisant des équipements de pointe, des expertises éprouvées et un engagement constant sur le terrain.'
+      title: t('Notre Mission', 'Our Mission'),
+      desc: t(
+        'Concevoir et réaliser des grands travaux de haute qualité technique en mobilisant des équipements de pointe, des expertises éprouvées et un engagement constant sur le terrain.',
+        'To design and execute high-tech civil works using state-of-the-art machinery, proven technical expertise, and continuous field commitment.'
+      )
     },
     {
       id: 3,
       icon: Rocket,
       badge: '03 • Ambition',
-      title: 'Notre Ambition',
-      desc: 'Étendre notre empreinte géographique, renforcer l’autonomie industrielle locale et bâtir des ouvrages d’art résilients qui façonnent le développement économique durable.'
+      title: t('Notre Ambition', 'Our Ambition'),
+      desc: t(
+        'Étendre notre empreinte géographique, renforcer l’autonomie industrielle locale et bâtir des ouvrages d’art résilients qui façonnent le développement économique durable.',
+        'To expand our regional reach, strengthen local industrial capabilities, and construct resilient civil structures shaping sustainable economic growth.'
+      )
     }
   ];
 
@@ -38,21 +49,26 @@ export const AboutSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         
-        {/* Header: Épuré & Structuré */}
+        {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-gray-100">
           <div className="max-w-2xl space-y-3">
             <div className="inline-flex items-center space-x-2 bg-slate-50 text-[#0E2232] px-3.5 py-1.5 rounded-full border border-gray-200/80 shadow-xs">
               <span className="w-2 h-2 rounded-full bg-[#F5C51B] animate-pulse"></span>
-              <span className="text-xs uppercase tracking-widest font-extrabold text-[#0E2232]">Qui sommes-nous ?</span>
+              <span className="text-xs uppercase tracking-widest font-extrabold text-[#0E2232]">
+                {t("Qui sommes-nous ?", "About Us")}
+              </span>
             </div>
             <h2 className="font-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0E2232] tracking-tight leading-tight">
-              Bâtir l’Avenir avec Rigueur, Puissance &amp; Vision
+              {t("Bâtir l’Avenir avec Rigueur, Puissance & Vision", "Building the Future with Precision, Power & Vision")}
             </h2>
           </div>
 
           <div className="max-w-md space-y-4">
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-normal">
-              Acteur majeur du BTP, des Travaux Publics et du Génie Civil, <strong>GILIS BTP SARL</strong> conçoit et réalise les infrastructures stratégiques qui transforment le paysage du Bénin et d’Afrique de l’Ouest.
+              {t(
+                "Acteur majeur du BTP, des Travaux Publics et du Génie Civil, GILIS BTP SARL conçoit et réalise les infrastructures stratégiques qui transforment le paysage du Bénin et d’Afrique de l’Ouest.",
+                "A leading player in civil engineering, road works, and general construction, GILIS BTP SARL designs and constructs strategic infrastructures transforming Benin and West Africa."
+              )}
             </p>
 
             <button
@@ -60,7 +76,7 @@ export const AboutSection: React.FC = () => {
               onClick={() => setModalOpen(true)}
               className="inline-flex items-center space-x-2.5 px-6 py-3.5 bg-[#0E2232] hover:bg-[#183952] text-white font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer group"
             >
-              <span>Découvrir notre plaquette institutionnelle</span>
+              <span>{t("Découvrir notre plaquette institutionnelle", "Discover our corporate brochure")}</span>
               <ArrowUpRight className="w-4 h-4 text-[#F5C51B] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </div>
@@ -73,10 +89,10 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-2">
               <span className="text-xs font-extrabold text-[#F5C51B] bg-[#0E2232] px-3 py-1 rounded-md tracking-wider uppercase">
-                Notre ADN Opérationnel
+                {t("Notre ADN Opérationnel", "Our Operational DNA")}
               </span>
               <h3 className="font-title text-2xl sm:text-3xl font-extrabold text-[#0E2232] leading-snug">
-                Une maîtrise complète de la chaîne de construction.
+                {t("Une maîtrise complète de la chaîne de construction.", "Complete mastery across the entire construction lifecycle.")}
               </h3>
             </div>
 
@@ -140,25 +156,28 @@ export const AboutSection: React.FC = () => {
                   GILIS BTP SARL
                 </span>
                 <span className="bg-white/10 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/20">
-                  Autonomie Logistique
+                  {t("Autonomie Logistique", "Logistics Autonomy")}
                 </span>
               </div>
 
-              {/* Floating Dark Glass Overlay - Highlighting Heavy Equipment Capacity */}
+              {/* Floating Dark Glass Overlay */}
               <div className="relative z-10 p-5 sm:p-6 bg-[#0A1622]/95 backdrop-blur-md text-white rounded-2xl border-l-4 border-[#F5C51B] shadow-2xl space-y-2 mt-auto">
                 <div className="flex items-center space-x-2 text-[#F5C51B] text-xs font-extrabold uppercase tracking-wider">
                   <Truck className="w-4 h-4" />
-                  <span>Puissance Matérielle &amp; Logistique</span>
+                  <span>{t("Puissance Matérielle & Logistique", "Equipment & Logistics Fleet")}</span>
                 </div>
                 <h4 className="font-title text-lg font-extrabold text-white">
-                  +50 engins et équipements
+                  {t("+50 engins et équipements", "50+ Machinery & Fleet Units")}
                 </h4>
                 <p className="text-xs text-gray-300 leading-relaxed">
-                  Un parc performant comprenant 20 bétonnières, des panneaux de coffrage et des équipements adaptés à la réalisation de chantiers de toutes envergures.
+                  {t(
+                    "Un parc performant comprenant 20 bétonnières, des panneaux de coffrage et des équipements adaptés à la réalisation de chantiers de toutes envergures.",
+                    "A high-capacity fleet featuring 20 concrete mixers, shuttering panels, and heavy machinery for projects of all sizes."
+                  )}
                 </p>
                 <div className="pt-2 flex items-center space-x-2 text-[11px] text-gray-400 font-medium">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#F5C51B]" />
-                  <span>20 bétonnières • Coffrages • Équipements de chantier</span>
+                  <span>{t("20 bétonnières • Coffrages • Équipements de chantier", "20 concrete mixers • Shuttering • On-site machinery")}</span>
                 </div>
               </div>
             </div>

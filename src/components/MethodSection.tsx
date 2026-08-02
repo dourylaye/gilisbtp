@@ -14,42 +14,84 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const MethodSection: React.FC = () => {
+  const { t } = useLanguage();
   const [activeStep, setActiveStep] = useState(0);
 
   const stepIcons = [Search, Ruler, HardHat, ShieldCheck, CheckCircle2];
   
   const stepDetails = [
     {
-      subtitle: 'Audit, Faisabilité & Analyse Topographique',
-      deliverables: ['Relevés topographiques 3D', 'Analyse du cahier des charges', 'Identification des contraintes du site'],
-      resources: ['Équipe d’Ingénieurs Géomètres', 'Drones de cartographie', 'Laboratoire géotechnique agréé'],
-      qualityCheck: 'Validation des données de terrain & plan d’impact environnemental'
+      subtitle: t('Audit, Faisabilité & Analyse Topographique', 'Audit, Feasibility & Topographical Analysis'),
+      deliverables: [
+        t('Relevés topographiques 3D', '3D topographical surveys'),
+        t('Analyse du cahier des charges', 'Specifications review'),
+        t('Identification des contraintes du site', 'Site constraints assessment')
+      ],
+      resources: [
+        t('Équipe d’Ingénieurs Géomètres', 'Surveyor engineering team'),
+        t('Drones de cartographie', 'Mapping drones'),
+        t('Laboratoire géotechnique agréé', 'Certified geotechnical lab')
+      ],
+      qualityCheck: t('Validation des données de terrain & plan d’impact environnemental', 'Field data validation & environmental impact plan')
     },
     {
-      subtitle: 'Ingénierie, Modélisation & Calculs de Structure',
-      deliverables: ['Essais géotechniques en laboratoire', 'Dimensionnement des chaussées & ouvrages', 'Planning d’exécution & budgétisation'],
-      resources: ['Bureau d’Études GILIS BTP', 'Logiciels de DAO/CAO BTP', 'Experts en Génie Civil'],
-      qualityCheck: 'Validation du Plan d’Assurance Qualité (PAQ) & études de sol'
+      subtitle: t('Ingénierie, Modélisation & Calculs de Structure', 'Engineering, Modeling & Structural Calculation'),
+      deliverables: [
+        t('Essais géotechniques en laboratoire', 'Laboratory geotechnical testing'),
+        t('Dimensionnement des chaussées & ouvrages', 'Pavement & structural design'),
+        t('Planning d’exécution & budgétisation', 'Execution schedule & budgeting')
+      ],
+      resources: [
+        t('Bureau d’Études GILIS BTP', 'GILIS BTP Design Office'),
+        t('Logiciels de DAO/CAO BTP', 'CAD/BIM engineering software'),
+        t('Experts en Génie Civil', 'Civil engineering specialists')
+      ],
+      qualityCheck: t('Validation du Plan d’Assurance Qualité (PAQ) & études de sol', 'Quality Assurance Plan (QAP) & soil study validation')
     },
     {
-      subtitle: 'Mobilisation des Engins Lourds & Déploiement',
-      deliverables: ['Installation de la base-vie', 'Acheminement des engins lourds', 'Terrassement & préparation des assises'],
-      resources: ['Parc de +1 000 engins en propre', 'Centrales mobiles d’enrobé & béton', 'Conducteurs de travaux spécialisés'],
-      qualityCheck: 'Contrôle quotidien de la sécurité chantier & zéro accident'
+      subtitle: t('Mobilisation des Engins Lourds & Déploiement', 'Equipment Mobilization & On-site Deployment'),
+      deliverables: [
+        t('Installation de la base-vie', 'Base camp & site setup'),
+        t('Acheminement des engins lourds', 'Heavy machinery delivery'),
+        t('Terrassement & préparation des assises', 'Earthworks & subgrade preparation')
+      ],
+      resources: [
+        t('Parc de +50 engins en propre', 'In-house fleet of 50+ machines'),
+        t('Centrales mobiles d’enrobé & béton', 'Mobile asphalt & concrete plants'),
+        t('Conducteurs de travaux spécialisés', 'Specialized site supervisors')
+      ],
+      qualityCheck: t('Contrôle quotidien de la sécurité chantier & zéro accident', 'Daily site safety checks & zero accident target')
     },
     {
-      subtitle: 'Exécution, Pose des Matériaux & Essais Continus',
-      deliverables: ['Couche de roulement & enrobé à chaud', 'Ouvrages d’art & assainissement', 'Essais de compacité & carottage'],
-      resources: ['Laboratoire itinérant sur chantier', 'Finisseurs d’asphalte à guidage laser', 'Équipes d’application de nuit/jour'],
-      qualityCheck: 'Contrôle continu de la température d’enrobé & tolérance de nivellement'
+      subtitle: t('Exécution, Pose des Matériaux & Essais Continus', 'Execution, Laying & Continuous Testing'),
+      deliverables: [
+        t('Couche de roulement & enrobé à chaud', 'Wearing course & hot mix asphalt'),
+        t('Ouvrages d’art & assainissement', 'Civil structures & drainage'),
+        t('Essais de compacité & carottage', 'Compaction & core testing')
+      ],
+      resources: [
+        t('Laboratoire itinérant sur chantier', 'Mobile site lab'),
+        t('Finisseurs d’asphalte à guidage laser', 'Laser-guided asphalt pavers'),
+        t('Équipes d’application de nuit/jour', 'Day/night paving crews')
+      ],
+      qualityCheck: t('Contrôle continu de la température d’enrobé & tolérance de nivellement', 'Continuous asphalt temp checks & grade tolerance')
     },
     {
-      subtitle: 'Inspection, Réception & Livrable Final',
-      deliverables: ['Procès-verbal de réception des travaux', 'Dossier d’Ouvrage Exécuté (DOE)', 'Garantie de parfait achèvement'],
-      resources: ['Missions de contrôle externes', 'Direction Générale GILIS BTP', 'Service Maintenance & Suivi'],
-      qualityCheck: 'Conformité totale aux exigences contractuelles & mise en service immédiate'
+      subtitle: t('Inspection, Réception & Livrable Final', 'Inspection, Handover & Final Delivery'),
+      deliverables: [
+        t('Procès-verbal de réception des travaux', 'Work acceptance certificate'),
+        t('Dossier d’Ouvrage Exécuté (DOE)', 'As-built documentation (DOE)'),
+        t('Garantie de parfait achèvement', 'Completion warranty')
+      ],
+      resources: [
+        t('Missions de contrôle externes', 'External inspection boards'),
+        t('Direction Générale GILIS BTP', 'GILIS BTP Executive Board'),
+        t('Service Maintenance & Suivi', 'Maintenance & Support team')
+      ],
+      qualityCheck: t('Conformité totale aux exigences contractuelles & mise en service immédiate', 'Full contractual compliance & immediate commissioning')
     }
   ];
 
@@ -83,15 +125,18 @@ export const MethodSection: React.FC = () => {
           <div className="space-y-2">
             <div className="inline-flex items-center space-x-2 bg-white/10 text-[#F5C51B] px-3 py-1 rounded-full border border-[#F5C51B]/30 backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-[#F5C51B]" />
-              <span className="text-xs uppercase tracking-widest font-extrabold">Méthodologie Opérationnelle</span>
+              <span className="text-xs uppercase tracking-widest font-extrabold">{t("Méthodologie Opérationnelle", "Operational Methodology")}</span>
             </div>
             <h2 className="font-title text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-              Processus d’Exécution en 5 Étapes
+              {t("Processus d’Exécution en 5 Étapes", "5-Step Execution Methodology")}
             </h2>
           </div>
 
           <p className="max-w-md text-gray-300 text-xs sm:text-sm leading-relaxed">
-            Une approche scientifique et structurée garantissant le respect des normes, des délais et des exigences techniques.
+            {t(
+              "Une approche scientifique et structurée garantissant le respect des normes, des délais et des exigences techniques.",
+              "A structured scientific approach ensuring compliance with standards, deadlines, and technical specifications."
+            )}
           </p>
         </div>
 
@@ -123,7 +168,7 @@ export const MethodSection: React.FC = () => {
                   <span className={`block text-[10px] font-extrabold uppercase tracking-wider ${
                     isActive ? 'text-[#F5C51B]' : 'text-gray-400'
                   }`}>
-                    Étape 0{step.number}
+                    {t(`Étape 0${step.number}`, `Step 0${step.number}`)}
                   </span>
                   <span className="block text-xs font-bold truncate">
                     {step.title.split(' ')[0]} {step.title.split(' ')[1] || ''}
@@ -158,7 +203,7 @@ export const MethodSection: React.FC = () => {
                     </div>
                     <div>
                       <span className="inline-block bg-[#F5C51B]/15 text-[#F5C51B] px-2.5 py-0.5 rounded text-[11px] font-extrabold uppercase tracking-wider border border-[#F5C51B]/30">
-                        Étape {currentStep.number} sur 5 • {currentDetail.subtitle}
+                        {t(`Étape ${currentStep.number} sur 5`, `Step ${currentStep.number} of 5`)} • {currentDetail.subtitle}
                       </span>
                       <h3 className="font-title text-xl sm:text-2xl font-extrabold text-white mt-1">
                         {currentStep.title}
@@ -174,7 +219,7 @@ export const MethodSection: React.FC = () => {
                   <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
                     <div className="flex items-center space-x-2 text-[#F5C51B] text-xs font-extrabold uppercase tracking-wider">
                       <Layers className="w-4 h-4" />
-                      <span>Livrables Clés</span>
+                      <span>{t("Livrables Clés", "Key Deliverables")}</span>
                     </div>
                     <ul className="grid sm:grid-cols-2 gap-2">
                       {currentDetail.deliverables.map((dItem, dIdx) => (
@@ -194,7 +239,7 @@ export const MethodSection: React.FC = () => {
                     <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2">
                       <div className="flex items-center space-x-2 text-[#F5C51B] text-xs font-extrabold uppercase tracking-wider">
                         <Truck className="w-4 h-4" />
-                        <span>Moyens Mobilisés</span>
+                        <span>{t("Moyens Mobilisés", "Deployed Resources")}</span>
                       </div>
                       <ul className="space-y-1.5">
                         {currentDetail.resources.map((rItem, rIdx) => (
@@ -211,7 +256,7 @@ export const MethodSection: React.FC = () => {
                       <FileCheck className="w-5 h-5 text-[#F5C51B] shrink-0 mt-0.5" />
                       <div>
                         <span className="font-extrabold text-[#F5C51B] uppercase block text-[10px] tracking-wider">
-                          Contrôle Qualité &amp; Sécurité
+                          {t("Contrôle Qualité & Sécurité", "Quality & Safety Assurance")}
                         </span>
                         <span className="text-gray-200">{currentDetail.qualityCheck}</span>
                       </div>
@@ -225,7 +270,7 @@ export const MethodSection: React.FC = () => {
                       className="inline-flex items-center space-x-1.5 text-xs font-bold text-gray-300 hover:text-white px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors cursor-pointer"
                     >
                       <ChevronLeft className="w-4 h-4" />
-                      <span>Étape Précédente</span>
+                      <span>{t("Étape Précédente", "Previous Step")}</span>
                     </button>
 
                     <div className="text-xs text-gray-400 font-bold">
@@ -236,7 +281,7 @@ export const MethodSection: React.FC = () => {
                       onClick={handleNext}
                       className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#0E2232] bg-[#F5C51B] hover:bg-yellow-400 px-3.5 py-1.5 rounded-lg transition-colors cursor-pointer shadow"
                     >
-                      <span>Étape Suivante</span>
+                      <span>{t("Étape Suivante", "Next Step")}</span>
                       <ChevronRight className="w-4 h-4" />
                     </button>
                   </div>

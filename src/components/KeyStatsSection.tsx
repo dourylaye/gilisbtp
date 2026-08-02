@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Truck, Building2, ShieldCheck, Clock, Globe, Handshake, Users, Waypoints } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface StatItemProps {
   value: number;
@@ -74,6 +75,8 @@ const StatCounter: React.FC<StatItemProps> = ({ value, prefix = '', suffix = '',
 };
 
 export const KeyStatsSection: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="chiffres-cles" className="py-20 lg:py-24 bg-[#0E2232] text-white relative overflow-hidden">
       {/* Background Subtle Grid & Accent Glow */}
@@ -85,14 +88,17 @@ export const KeyStatsSection: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs font-extrabold text-[#F5C51B] uppercase tracking-widest bg-[#F5C51B]/10 px-4 py-1.5 rounded-full border border-[#F5C51B]/20 inline-block shadow-sm">
-            Chiffres Clés &amp; Envergure
+            {t("Chiffres Clés & Envergure", "Key Figures & Scale")}
           </span>
           <h2 className="font-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Des Capacités &amp; Moyens à la Hauteur de Vos Ambitions
+            {t("Des Capacités & Moyens à la Hauteur de Vos Ambitions", "Capabilities Matching Your Scale & Ambition")}
           </h2>
           <div className="h-1.5 w-16 bg-[#F5C51B] mx-auto my-3 rounded-full"></div>
           <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-            Notre puissance d’intervention reposant sur nos équipes d'ingénieurs, nos partenaires régionaux et notre matériel en propre au Bénin et en Afrique de l’Ouest.
+            {t(
+              "Notre puissance d’intervention reposant sur nos équipes d'ingénieurs, nos partenaires régionaux et notre matériel en propre au Bénin et en Afrique de l’Ouest.",
+              "Our operational strength is built on engineering teams, regional partners, and dedicated machinery across Benin and West Africa."
+            )}
           </p>
         </div>
 
@@ -101,59 +107,59 @@ export const KeyStatsSection: React.FC = () => {
           <StatCounter
             value={5}
             prefix="+"
-            label="Pays d’Intervention"
-            sublabel="Présence stratégique en Afrique de l’Ouest"
+            label={t("Pays d’Intervention", "Countries of Operation")}
+            sublabel={t("Présence stratégique en Afrique de l’Ouest", "Strategic presence across West Africa")}
             icon={Globe}
           />
           <StatCounter
             value={1000}
             prefix="+ "
             suffix=" km"
-            label="Km de Routes Réalisées"
-            sublabel="Ouvrages routiers & pistes d’aménagement"
+            label={t("Km de Routes Réalisées", "Km of Roads Constructed")}
+            sublabel={t("Ouvrages routiers & pistes d’aménagement", "Roadworks & rural development tracks")}
             icon={Waypoints}
           />
           <StatCounter
             value={50}
             prefix="+"
-            label="Collaborateurs & Experts"
-            sublabel="Ingénieurs & spécialistes mobilisés"
+            label={t("Collaborateurs & Experts", "Staff & Technical Experts")}
+            sublabel={t("Ingénieurs & spécialistes mobilisés", "Engineers & specialists deployed")}
             icon={Users}
           />
           <StatCounter
             value={100}
             prefix="+"
-            label="Fournisseurs sous-région"
-            sublabel="Réseau de partenaires logistiques & matériaux"
+            label={t("Fournisseurs sous-région", "Regional Suppliers")}
+            sublabel={t("Réseau de partenaires logistiques & matériaux", "Logistics & materials supply network")}
             icon={Handshake}
           />
           <StatCounter
             value={15}
             prefix="+"
-            suffix=" Ans"
-            label="D’Expérience BTP"
-            sublabel="Savoir-faire reconnu dans la construction"
+            suffix={t(" Ans", " Yrs")}
+            label={t("D’Expérience BTP", "Construction Experience")}
+            sublabel={t("Savoir-faire reconnu dans la construction", "Recognized expertise in civil engineering")}
             icon={Clock}
           />
           <StatCounter
-            value={1000}
+            value={50}
             prefix="+"
-            label="Engins Lourds en Propre"
-            sublabel="Centrales d’enrobé, pelles & bulldozers"
+            label={t("Engins & Équipements", "Heavy Machinery Units")}
+            sublabel={t("Bétonnières, engins & matériel lourd", "Mixers, earthmovers & site equipment")}
             icon={Truck}
           />
           <StatCounter
             value={150}
             prefix="+"
-            label="Grands Ouvrages Livrés"
-            sublabel="Routes, ponts & génie civil"
+            label={t("Grands Ouvrages Livrés", "Major Projects Handed Over")}
+            sublabel={t("Routes, ponts & génie civil", "Roads, structures & civil works")}
             icon={Building2}
           />
           <StatCounter
             value={100}
             suffix="%"
-            label="Conformité &amp; Sécurité"
-            sublabel="Plan d'Assurance Qualité &amp; Zéro Accident"
+            label={t("Conformité & Sécurité", "Safety & Compliance Rate")}
+            sublabel={t("Plan d'Assurance Qualité & Zéro Accident", "Quality Assurance & Zero Accident target")}
             icon={ShieldCheck}
           />
         </div>

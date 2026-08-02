@@ -1,49 +1,70 @@
 import React from 'react';
 import { ShieldCheck, Cpu, Users, Layers, Zap, Landmark, CheckCircle2, Award, Sparkles, Building2 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const WhyChooseUs: React.FC = () => {
+  const { t } = useLanguage();
+
   const atouts = [
     {
       number: '01',
-      title: 'Parc d’Équipements en Propre',
-      description: 'Plus de 1 000 engins lourds, centrales d’enrobé à chaud et camions de transport mobilisables sans délai intermédiaire.',
+      title: t('Parc d’Équipements en Propre', 'In-House Equipment Fleet'),
+      description: t(
+        'Plus de 50 engins lourds, centrales d’enrobé à chaud et camions de transport mobilisables sans délai intermédiaire.',
+        'Over 50 heavy machines, hot-mix asphalt plants, and trucks ready for immediate field deployment.'
+      ),
       icon: Cpu,
-      badge: '+1 000 Engins'
+      badge: t('+50 Engins', '50+ Machinery Units')
     },
     {
       number: '02',
-      title: 'Ingénierie & Capital Humain',
-      description: 'Plus de 50 experts, ingénieurs géomètres, conducteurs de travaux et techniciens certifiés dédiés à vos chantiers.',
+      title: t('Ingénierie & Capital Humain', 'Engineering & Human Capital'),
+      description: t(
+        'Plus de 50 experts, ingénieurs géomètres, conducteurs de travaux et techniciens certifiés dédiés à vos chantiers.',
+        'A dedicated team of 50+ engineers, surveyors, project managers, and certified technicians.'
+      ),
       icon: Users,
-      badge: '50+ Experts'
+      badge: t('50+ Experts', '50+ Experts')
     },
     {
       number: '03',
-      title: 'Maîtrise Absolue des Délais',
-      description: 'Planification digitale par chemin critique et pilotage quotidien garantissant la livraison de vos ouvrages sans retard.',
+      title: t('Maîtrise Absolue des Délais', 'Strict Schedule Management'),
+      description: t(
+        'Planification digitale par chemin critique et pilotage quotidien garantissant la livraison de vos ouvrages sans retard.',
+        'Critical path digital planning and daily field monitoring ensuring zero delay in project handovers.'
+      ),
       icon: ShieldCheck,
-      badge: '100% Respectés'
+      badge: t('100% Respectés', '100% On Time')
     },
     {
       number: '04',
-      title: 'Laboratoire Qualité Intégré',
-      description: 'Essais systématiques sur les matériaux (bétons, enrobés, sols) et traçabilité certifiée pour une durabilité maximale.',
+      title: t('Laboratoire Qualité Intégré', 'Integrated Quality Lab'),
+      description: t(
+        'Essais systématiques sur les matériaux (bétons, enrobés, sols) et traçabilité certifiée pour une durabilité maximale.',
+        'Systematic laboratory testing of materials (concrete, asphalt, soil) ensuring maximum structural lifespan.'
+      ),
       icon: Layers,
-      badge: 'Normes ISO'
+      badge: t('Normes ISO', 'ISO Standards')
     },
     {
       number: '05',
-      title: 'Solidité Financière & Garanties',
-      description: 'Capacité de préfinancement importante, garanties décennales et partenariats bancaires de premier ordre.',
+      title: t('Solidité Financière & Garanties', 'Financial Strength & Guarantees'),
+      description: t(
+        'Capacité de préfinancement importante, garanties décennales et partenariats bancaires de premier ordre.',
+        'Robust pre-financing capacity, 10-year warranties, and top-tier banking partnerships.'
+      ),
       icon: Landmark,
-      badge: 'Garantie Décennale'
+      badge: t('Garantie Décennale', '10-Year Warranty')
     },
     {
       number: '06',
-      title: 'Ancrage & Logistique Sous-Régionale',
-      description: 'Présence dans 5+ pays d’Afrique de l’Ouest appuyée par un réseau réactif de plus de 100 fournisseurs de confiance.',
+      title: t('Ancrage & Logistique Sous-Régionale', 'Sub-Regional Reach & Logistics'),
+      description: t(
+        'Présence dans 5+ pays d’Afrique de l’Ouest appuyée par un réseau réactif de plus de 100 fournisseurs de confiance.',
+        'Operations across 5+ West African countries backed by a responsive network of 100+ trusted suppliers.'
+      ),
       icon: Zap,
-      badge: '+5 Pays Covered'
+      badge: t('+5 Pays', '5+ Countries')
     }
   ];
 
@@ -60,12 +81,12 @@ export const WhyChooseUs: React.FC = () => {
             <div className="inline-flex items-center space-x-2 bg-[#0E2232]/5 text-[#0E2232] px-4 py-1.5 rounded-full border border-[#0E2232]/10 shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-[#F5C51B]" />
               <span className="text-xs uppercase tracking-widest font-extrabold text-[#0E2232]">
-                Nos Atouts Concurrentiels
+                {t("Nos Atouts Concurrentiels", "Our Competitive Strengths")}
               </span>
             </div>
 
             <h2 className="font-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0E2232] tracking-tight leading-tight">
-              Pourquoi Accorder Votre Confiance à GILIS BTP ?
+              {t("Pourquoi Accorder Votre Confiance à GILIS BTP ?", "Why Trust GILIS BTP?")}
             </h2>
 
             <div className="h-1.5 w-20 bg-[#F5C51B] rounded-full"></div>
@@ -73,7 +94,10 @@ export const WhyChooseUs: React.FC = () => {
 
           <div className="lg:col-span-5">
             <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-normal">
-              Nous allions la puissance matérielle d'un géant des infrastructures avec la flexibilité et la rigueur technique d'un bureau d'études de premier rang.
+              {t(
+                "Nous allions la puissance matérielle d'un géant des infrastructures avec la flexibilité et la rigueur technique d'un bureau d'études de premier rang.",
+                "We combine the heavy machinery capacity of a major contractor with the agility and technical precision of a top-tier design office."
+              )}
             </p>
           </div>
         </div>
@@ -93,23 +117,26 @@ export const WhyChooseUs: React.FC = () => {
 
               <div className="space-y-2">
                 <span className="text-xs font-extrabold uppercase tracking-widest text-[#F5C51B] block">
-                  Engagement Institutionnel
+                  {t("Engagement Institutionnel", "Institutional Commitment")}
                 </span>
                 <h3 className="font-title text-2xl font-extrabold text-white leading-snug">
-                  Zéro Compromis sur la Qualité &amp; la Sécurité
+                  {t("Zéro Compromis sur la Qualité & la Sécurité", "Zero Compromise on Quality & Safety")}
                 </h3>
               </div>
 
               <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
-                Chaque contrat signé avec GILIS BTP est adossé à des garanties décennales, des assurances tous risques chantier et un Plan d’Assurance Qualité (PAQ) certifié par les bureaux de contrôle indépendants.
+                {t(
+                  "Chaque contrat signé avec GILIS BTP est adossé à des garanties décennales, des assurances tous risques chantier et un Plan d’Assurance Qualité (PAQ) certifié par les bureaux de contrôle indépendants.",
+                  "Every contract backed by 10-year warranties, comprehensive site insurance, and certified Quality Assurance Plans (QAP)."
+                )}
               </p>
 
               <ul className="space-y-2.5 pt-2">
                 {[
-                  'Certification des matériaux en laboratoire',
-                  'Garanties décennales & assurances BTP',
-                  'Supervision continue QHSE & Sécurité',
-                  'Transparence des coûts & reporting digital'
+                  t('Certification des matériaux en laboratoire', 'Laboratory materials testing'),
+                  t('Garanties décennales & assurances BTP', '10-Year warranties & insurance'),
+                  t('Supervision continue QHSE & Sécurité', 'Continuous HSE & Safety monitoring'),
+                  t('Transparence des coûts & reporting digital', 'Cost transparency & digital reports')
                 ].map((item, i) => (
                   <li key={i} className="flex items-center space-x-2.5 text-xs text-gray-200 font-medium">
                     <CheckCircle2 className="w-4 h-4 text-[#F5C51B] shrink-0" />
@@ -127,7 +154,7 @@ export const WhyChooseUs: React.FC = () => {
                 </span>
               </div>
               <span className="text-[10px] font-bold text-[#F5C51B] bg-[#F5C51B]/10 px-2.5 py-1 rounded-full border border-[#F5C51B]/20">
-                AFRIQUE DE L'OUEST
+                {t("AFRIQUE DE L'OUEST", "WEST AFRICA")}
               </span>
             </div>
           </div>

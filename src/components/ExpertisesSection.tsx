@@ -14,12 +14,14 @@ import {
   FileText
 } from 'lucide-react';
 import { RequestType } from '../types';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ExpertisesSectionProps {
   onSelectRequestType?: (type: RequestType, customDetails?: string) => void;
 }
 
 export const ExpertisesSection: React.FC<ExpertisesSectionProps> = ({ onSelectRequestType }) => {
+  const { t } = useLanguage();
 
   const handleSoumettreProject = (expertiseTitle?: string) => {
     if (onSelectRequestType) {
@@ -62,27 +64,30 @@ export const ExpertisesSection: React.FC<ExpertisesSectionProps> = ({ onSelectRe
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
         
-        {/* Section Header - Ultra Clear & Direct */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center space-x-2 bg-[#0E2232] text-white px-4 py-1.5 rounded-full border border-[#F5C51B]/40 shadow-sm">
             <Sparkles className="w-4 h-4 text-[#F5C51B]" />
             <span className="text-xs font-title uppercase tracking-widest font-extrabold text-[#F5C51B]">
-              Nos 6 Domaines de Compétence
+              {t("Nos 6 Domaines de Compétence", "Our 6 Key Expertise Sectors")}
             </span>
           </div>
 
           <h2 className="font-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0E2232] tracking-tight">
-            Nos Métiers &amp; Expertises BTP
+            {t("Nos Métiers & Expertises BTP", "Our Construction & Engineering Expertise")}
           </h2>
 
           <div className="h-1 w-20 bg-[#F5C51B] mx-auto rounded-full"></div>
 
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-            Une organisation intégrée capable de prendre en charge tous vos chantiers et infrastructures de A à Z.
+            {t(
+              "Une organisation intégrée capable de prendre en charge tous vos chantiers et infrastructures de A à Z.",
+              "An integrated organization capable of managing all your infrastructure and building projects end-to-end."
+            )}
           </p>
         </div>
 
-        {/* 6 Direct Cards - Clear Grid with Smooth Hover Animations */}
+        {/* 6 Direct Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {EXPERTISES.map((item) => (
             <div 
@@ -103,7 +108,7 @@ export const ExpertisesSection: React.FC<ExpertisesSectionProps> = ({ onSelectRe
                   <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
                     {/* Number Badge */}
                     <span className="bg-[#F5C51B] text-[#0E2232] text-xs font-title font-extrabold px-3 py-1 rounded-full shadow-md group-hover:scale-105 transition-transform">
-                      Pôle {item.number}
+                      {t(`Pôle ${item.number}`, `Sector ${item.number}`)}
                     </span>
 
                     {/* Domain Icon Circle */}
@@ -128,7 +133,7 @@ export const ExpertisesSection: React.FC<ExpertisesSectionProps> = ({ onSelectRe
 
                   <div className="space-y-2 pt-3 border-t border-gray-100">
                     <span className="text-[11px] font-title font-extrabold text-[#0E2232] uppercase tracking-wider block">
-                      Prestations &amp; Travaux inclus :
+                      {t("Prestations & Travaux inclus :", "Included Services & Works:")}
                     </span>
                     <ul className="space-y-2">
                       {item.services.map((service, idx) => (
@@ -148,7 +153,7 @@ export const ExpertisesSection: React.FC<ExpertisesSectionProps> = ({ onSelectRe
                   onClick={() => handleSoumettreProject(item.title)}
                   className="w-full py-3.5 px-4 bg-[#0E2232] hover:bg-[#183952] text-white font-title text-xs font-extrabold uppercase tracking-wider rounded-xl transition-all shadow-sm hover:shadow-md flex items-center justify-center space-x-2 cursor-pointer group-hover:bg-[#F5C51B] group-hover:text-[#0E2232]"
                 >
-                  <span>Demander une étude / Devis</span>
+                  <span>{t("Demander une étude / Devis", "Request a Quote / Study")}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
                 </button>
               </div>
@@ -162,13 +167,16 @@ export const ExpertisesSection: React.FC<ExpertisesSectionProps> = ({ onSelectRe
           <div className="space-y-1.5 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-2 text-[#F5C51B] text-xs font-extrabold uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" />
-              <span>Garantie Décennale &amp; Conformité Aux Normes BTP</span>
+              <span>{t("Garantie Décennale & Conformité Aux Normes BTP", "10-Year Warranty & Compliance with Standards")}</span>
             </div>
             <h3 className="font-title text-lg sm:text-xl font-bold text-white">
-              Besoin d'une offre globale combinant plusieurs métiers ?
+              {t("Besoin d'une offre globale combinant plusieurs métiers ?", "Need a comprehensive multi-disciplinary proposal?")}
             </h3>
             <p className="text-xs text-gray-300">
-              Nos bureaux d'études chiffrent vos projets d'aménagement complets et appels d'offres en 48h.
+              {t(
+                "Nos bureaux d'études chiffrent vos projets d'aménagement complets et appels d'offres en 48h.",
+                "Our engineering desk provides cost estimates for multi-phase projects and tenders within 48 hours."
+              )}
             </p>
           </div>
 
@@ -177,7 +185,7 @@ export const ExpertisesSection: React.FC<ExpertisesSectionProps> = ({ onSelectRe
             className="shrink-0 px-7 py-3.5 bg-[#F5C51B] hover:bg-[#e0b213] text-[#0E2232] font-title font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center space-x-2 cursor-pointer"
           >
             <FileText className="w-4 h-4" />
-            <span>Soumettre un projet global</span>
+            <span>{t("Soumettre un projet global", "Submit a global project")}</span>
           </button>
         </div>
 

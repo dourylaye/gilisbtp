@@ -1,32 +1,47 @@
 import React from 'react';
 import { ShieldCheck, HardHat, Clock, Leaf, Sparkles, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const EngagementsSection: React.FC = () => {
+  const { t } = useLanguage();
+
   const engagements = [
     {
-      title: 'Qualité & Conformité Technique',
+      title: t('Qualité & Conformité Technique', 'Quality & Technical Compliance'),
       icon: ShieldCheck,
-      badge: 'Normes ISO / BTP',
-      description: 'Respect scrupuleux des normes BTP internationales, des règles de l’art et des cahiers des charges les plus exigeants.'
+      badge: t('Normes ISO / BTP', 'ISO Standards'),
+      description: t(
+        'Respect scrupuleux des normes BTP internationales, des règles de l’art et des cahiers des charges les plus exigeants.',
+        'Strict adherence to international construction standards, engineering best practices, and demanding technical specifications.'
+      )
     },
     {
-      title: 'Sécurité QHSE & Protection',
+      title: t('Sécurité QHSE & Protection', 'HSE Safety & Worker Protection'),
       icon: HardHat,
-      badge: 'Zéro Accident',
-      description: 'Politique zéro accident sur nos chantiers. Formations continues, équipements de protection et contrôles préventifs quotidiens.'
+      badge: t('Zéro Accident', 'Zero Accident'),
+      description: t(
+        'Politique zéro accident sur nos chantiers. Formations continues, équipements de protection et contrôles préventifs quotidiens.',
+        'Zero-accident policy across all active worksites with continuous training, safety gear, and daily preventive audits.'
+      )
     },
     {
-      title: 'Respect des Délais Contractuels',
+      title: t('Respect des Délais Contractuels', 'Strict Timeline Adherence'),
       icon: Clock,
-      badge: 'Gestion Temps Réel',
-      description: 'Planification rigoureuse, logiciels de suivi de chantier avancés et optimisation logistique pour des livraisons toujours à temps.'
+      badge: t('Gestion Temps Réel', 'Real-time Tracking'),
+      description: t(
+        'Planification rigoureuse, logiciels de suivi de chantier avancés et optimisation logistique pour des livraisons toujours à temps.',
+        'Rigorous scheduling, advanced project tracking tools, and optimized supply chains ensuring on-time project handover.'
+      )
     },
     {
-      title: 'Éco-Responsabilité & Durabilité',
+      title: t('Éco-Responsabilité & Durabilité', 'Eco-Responsibility & Sustainability'),
       icon: Leaf,
-      badge: 'Chantiers Verts',
-      description: 'Gestion contrôlée des déchets, choix de matériaux durables et préservation des écosystèmes locaux pendant les travaux.'
+      badge: t('Chantiers Verts', 'Green Worksites'),
+      description: t(
+        'Gestion contrôlée des déchets, choix de matériaux durables et préservation des écosystèmes locaux pendant les travaux.',
+        'Controlled waste management, selection of eco-friendly materials, and preservation of local ecosystems during execution.'
+      )
     }
   ];
 
@@ -87,18 +102,21 @@ export const EngagementsSection: React.FC = () => {
           <div className="inline-flex items-center space-x-2 bg-[#0E2232]/10 text-[#0E2232] px-4 py-1.5 rounded-full border border-[#0E2232]/15 backdrop-blur-md shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#0E2232]" />
             <span className="text-xs uppercase tracking-widest font-extrabold">
-              Déontologie &amp; Responsabilité
+              {t("Déontologie & Responsabilité", "Ethics & Accountability")}
             </span>
           </div>
 
           <h2 className="font-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0E2232] tracking-tight leading-tight">
-            Nos Engagements Stratégiques
+            {t("Nos Engagements Stratégiques", "Our Strategic Commitments")}
           </h2>
 
           <div className="h-1.5 w-16 bg-[#F5C51B] mx-auto rounded-full"></div>
 
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-medium">
-            Parce que la confiance de nos partenaires institutionnels et privés se gagne sur le terrain par des actes mesurables et une rigueur sans faille.
+            {t(
+              "Parce que la confiance de nos partenaires institutionnels et privés se gagne sur le terrain par des actes mesurables et une rigueur sans faille.",
+              "Because the trust of our public and private partners is earned on the ground through measurable actions and flawless execution."
+            )}
           </p>
         </motion.div>
 
@@ -148,7 +166,7 @@ export const EngagementsSection: React.FC = () => {
                 {/* Card Footer Indicator */}
                 <div className="pt-6 mt-4 border-t border-gray-200/80 flex items-center space-x-2 text-xs font-bold text-[#0E2232] opacity-85 group-hover:opacity-100 transition-opacity">
                   <CheckCircle2 className="w-4 h-4 text-[#0E2232]" />
-                  <span className="uppercase text-[11px] tracking-wider font-extrabold">Engagement Garanti</span>
+                  <span className="uppercase text-[11px] tracking-wider font-extrabold">{t("Engagement Garanti", "Guaranteed Commitment")}</span>
                 </div>
 
               </motion.div>
