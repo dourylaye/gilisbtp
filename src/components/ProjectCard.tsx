@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, MapPin, Calendar, ExternalLink } from 'lucide-react';
 import { Project } from '../types';
+import { SmartImage } from './SmartImage';
 
 interface ProjectCardProps {
   project: Project;
@@ -69,10 +70,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
           onTouchEnd={handleTouchEnd}
           onClick={() => onOpenDetails(project)}
         >
-          <img
+          <SmartImage
             src={project.images[currentImgIndex]}
             alt={project.title}
-            referrerPolicy="no-referrer"
             className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A1622]/90 via-transparent to-black/20"></div>

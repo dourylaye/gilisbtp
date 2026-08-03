@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react';
 import { RequestType } from '../types';
+import { SmartImage } from './SmartImage';
 
 interface FooterProps {
   onOpenLegal: (type: 'mentions' | 'confidentialite') => void;
@@ -9,6 +10,22 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onSelectRequestType }) => {
   const [logoError, setLogoError] = React.useState(false);
+  const [logoIndex, setLogoIndex] = React.useState(0);
+
+  const footerLogos = [
+    '/images/logovertical_white.webp',
+    '/Images/LogoVertical_white.webp',
+    './images/logovertical_white.webp',
+    './Images/LogoVertical_white.webp'
+  ];
+
+  const handleLogoError = () => {
+    if (logoIndex < footerLogos.length - 1) {
+      setLogoIndex(prev => prev + 1);
+    } else {
+      setLogoError(true);
+    }
+  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -31,20 +48,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onSelectRequestType
           {/* Left: Logo & Slogan */}
           <div className="md:col-span-7 space-y-3">
             <div className="flex items-center space-x-4">
-              {!logoError ? (
-                <img 
-                  src="/Images/LogoVertical_white.webp" 
-                  alt="GILIS BTP Logo" 
-                  referrerPolicy="no-referrer"
-                  className="h-16 w-auto object-contain" 
-                  onError={() => setLogoError(true)}
-                />
-              ) : (
-                <div className="flex flex-col items-start justify-center">
-                  <span className="text-xl font-black text-[#F5C51B] font-title leading-none tracking-wider">GILIS</span>
-                  <span className="text-xs font-extrabold text-white font-title leading-none tracking-widest mt-1">BTP</span>
-                </div>
-              )}
+              <SmartImage 
+                src="/Images/LogoVertical_white.webp" 
+                alt="GILIS BTP Logo" 
+                className="h-16 w-auto object-contain" 
+              />
               <div>
                 <h4 className="font-title text-base font-extrabold text-white tracking-wide">
                   GILIS BTP SARL

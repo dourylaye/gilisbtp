@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, MapPin, Calendar, CheckCircle2, UserCheck, Clock, Award, FileText } from 'lucide-react';
 import { Project } from '../types';
+import { SmartImage } from './SmartImage';
 
 interface ProjectDetailModalProps {
   project: Project | null;
@@ -76,10 +77,9 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
           
           {/* Main Large Gallery Image Carousel */}
           <div className="relative bg-black rounded-sm overflow-hidden h-72 sm:h-96 md:h-[420px] group shadow-inner">
-            <img
+            <SmartImage
               src={project.images[activeImageIndex]}
               alt={`${project.title} - Image ${activeImageIndex + 1}`}
-              referrerPolicy="no-referrer"
               className="w-full h-full object-cover transition-opacity duration-300"
             />
 
@@ -120,7 +120,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                     idx === activeImageIndex ? 'border-[#F5C51B] scale-105 shadow-md' : 'border-transparent opacity-60 hover:opacity-100'
                   }`}
                 >
-                  <img src={imgUrl} alt="Vignette" referrerPolicy="no-referrer" className="w-full h-full object-cover" />
+                  <SmartImage src={imgUrl} alt="Vignette" className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>

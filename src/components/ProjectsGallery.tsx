@@ -3,6 +3,7 @@ import { PARTICULIERS_PROJECTS, ENTREPRISES_PROJECTS } from '../data/gilisData';
 import { Project } from '../types';
 import { ProjectDetailModal } from './ProjectDetailModal';
 import { MapPin, Calendar, Sparkles } from 'lucide-react';
+import { SmartImage } from './SmartImage';
 
 interface GalleryRowProps {
   title: string;
@@ -67,10 +68,9 @@ const GalleryRow: React.FC<GalleryRowProps> = ({ title, projects, onSelectProjec
           >
             {/* Big Prominent Image */}
             <div className="relative h-72 sm:h-80 md:h-88 overflow-hidden bg-slate-950">
-              <img
+              <SmartImage
                 src={project.images[0]}
                 alt={project.title}
-                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-95 group-hover:brightness-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0E2232]/95 via-[#0E2232]/35 to-transparent"></div>

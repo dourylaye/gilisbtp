@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Eye, Target, Rocket, ArrowUpRight, CheckCircle2, Truck } from 'lucide-react';
 import { AboutModal } from './AboutModal';
 import { useLanguage } from '../context/LanguageContext';
+import { SmartImage } from './SmartImage';
 
 export const AboutSection: React.FC = () => {
   const { t } = useLanguage();
@@ -143,10 +144,9 @@ export const AboutSection: React.FC = () => {
           {/* Right Column: Material Capacity Highlight Image Showcase */}
           <div className="lg:col-span-5 relative flex flex-col h-full min-h-[380px]">
             <div className="relative rounded-3xl overflow-hidden border border-gray-200/80 shadow-2xl bg-[#0A1622] group h-full flex flex-col justify-between p-6 sm:p-7">
-              <img
+              <SmartImage
                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200"
                 alt="Capacité matérielle et engins lourds GILIS BTP"
-                referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1622] via-[#0A1622]/30 to-transparent"></div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { SmartImage } from './SmartImage';
 
 interface NavbarProps {
   onSelectRequestType?: (type: any) => void;
@@ -12,6 +13,36 @@ export const Navbar: React.FC<NavbarProps> = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isLightBg, setIsLightBg] = useState(false);
   const [logoError, setLogoError] = useState(false);
+  const [logoIndex, setLogoIndex] = useState(0);
+
+  const lightLogos = [
+    '/images/logohorizontal.webp',
+    '/Images/LogoHorizontal.webp',
+    './images/logohorizontal.webp',
+    './Images/LogoHorizontal.webp'
+  ];
+
+  const darkLogos = [
+    '/images/logohorizontal_white.webp',
+    '/Images/LogoHorizontal_white.webp',
+    './images/logohorizontal_white.webp',
+    './Images/LogoHorizontal_white.webp'
+  ];
+
+  const currentLogoCandidates = isLightBg ? lightLogos : darkLogos;
+
+  useEffect(() => {
+    setLogoError(false);
+    setLogoIndex(0);
+  }, [isLightBg]);
+
+  const handleLogoError = () => {
+    if (logoIndex < currentLogoCandidates.length - 1) {
+      setLogoIndex(prev => prev + 1);
+    } else {
+      setLogoError(true);
+    }
+  };
 
   const navLinks = [
     { id: 'hero', label: t('ACCUEIL', 'HOME') },
@@ -115,20 +146,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
             className="flex items-center group cursor-pointer py-1 shrink-0"
             id="header-logo"
           >
-            {!logoError ? (
-              <img 
-                src={isLightBg ? "/Images/LogoHorizontal.webp" : "/Images/LogoHorizontal_white.webp"} 
-                alt="GILIS BTP" 
-                referrerPolicy="no-referrer"
-                className="h-10 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105"
-                onError={() => setLogoError(true)}
-              />
-            ) : (
-              <div className="flex items-center space-x-1.5 font-black font-title text-xl tracking-wider">
-                <span className="text-[#F5C51B] font-black">GILIS</span>
-                <span className={isLightBg ? 'text-[#0E2232]' : 'text-white'}>BTP</span>
-              </div>
-            )}
+            <SmartImage 
+              src={isLightBg ? "/Images/LogoHorizontal.webp" : "/Images/LogoHorizontal_white.webp"} 
+              alt="GILIS BTP" 
+              className="h-10 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop Navigation Links - Uppercase & Aligned Right (Compact space) */}

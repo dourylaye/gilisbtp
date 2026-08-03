@@ -2,6 +2,7 @@ import React from 'react';
 import { ShieldCheck, HardHat, Clock, Leaf, Sparkles, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
+import { SmartImage } from './SmartImage';
 
 export const EngagementsSection: React.FC = () => {
   const { t } = useLanguage();
@@ -52,10 +53,9 @@ export const EngagementsSection: React.FC = () => {
     >
       {/* Background High Quality BTP Construction Photo */}
       <div className="absolute inset-0 z-0">
-        <img
+        <SmartImage
           src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&q=80&w=2000"
           alt="Chantier BTP - Nos Engagements"
-          referrerPolicy="no-referrer"
           className="w-full h-full object-cover object-center opacity-40 filter brightness-95 contrast-105"
         />
         {/* Soft Warm Gradients for Legibility */}

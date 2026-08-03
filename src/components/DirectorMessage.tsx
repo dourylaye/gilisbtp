@@ -1,6 +1,7 @@
 import React from 'react';
 import { DIRECTOR_DATA } from '../data/gilisData';
 import { Quote } from 'lucide-react';
+import { SmartImage } from './SmartImage';
 
 export const DirectorMessage: React.FC = () => {
   return (
@@ -16,10 +17,9 @@ export const DirectorMessage: React.FC = () => {
           {/* Director Photo with Gold framing */}
           <div className="lg:col-span-5 relative">
             <div className="relative z-10 rounded-sm overflow-hidden shadow-2xl border-2 border-[#F5C51B]/30 max-w-md mx-auto">
-              <img
+              <SmartImage
                 src={DIRECTOR_DATA.image}
                 alt={DIRECTOR_DATA.name}
-                referrerPolicy="no-referrer"
                 className="w-full h-[400px] sm:h-[480px] object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0E2232] via-transparent to-transparent opacity-70"></div>

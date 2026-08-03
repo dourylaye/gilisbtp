@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { ChevronRight, ArrowDown } from 'lucide-react';
 import { RequestType } from '../types';
 import { useLanguage } from '../context/LanguageContext';
+import { SmartImage } from './SmartImage';
 
 interface HeroProps {
   onSelectRequestType?: (type: RequestType) => void;
 }
 
 const HERO_IMAGES = [
-  '/Images/slider1.webp',
-  '/Images/slider2.webp',
-  '/Images/slider3.webp'
+  '/images/slider1.webp',
+  '/images/slider2.webp',
+  '/images/slider3.webp'
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onSelectRequestType }) => {
@@ -55,10 +56,9 @@ export const Hero: React.FC<HeroProps> = ({ onSelectRequestType }) => {
               index === currentSlide ? 'opacity-70 scale-100' : 'opacity-0 scale-105'
             } transform transition-transform duration-[7000ms]`}
           >
-            <img
+            <SmartImage
               src={imgUrl}
               alt="Chantier GILIS BTP"
-              referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center filter brightness-95 contrast-105"
             />
           </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { EXPERTISES } from '../data/gilisData';
+import { SmartImage } from './SmartImage';
 import { 
   Building2, 
   Truck, 
@@ -97,10 +98,9 @@ export const ExpertisesSection: React.FC<ExpertisesSectionProps> = ({ onSelectRe
               <div>
                 {/* Image Header with Number & Domain Icon */}
                 <div className="relative h-52 overflow-hidden bg-[#0E2232]">
-                  <img
+                  <SmartImage
                     src={item.image}
                     alt={item.title}
-                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0E2232] via-[#0E2232]/40 to-transparent"></div>

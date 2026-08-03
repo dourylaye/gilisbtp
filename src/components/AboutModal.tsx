@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { X, Shield, Award, CheckCircle2, Lock, Lightbulb, Target, Eye, Building2, Quote } from 'lucide-react';
 import { DIRECTOR_DATA } from '../data/gilisData';
 import { useLanguage } from '../context/LanguageContext';
+import { SmartImage } from './SmartImage';
 
 interface AboutModalProps {
   isOpen: boolean;
@@ -86,10 +87,9 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
               {/* Photo & Title */}
               <div className="md:col-span-4 relative flex flex-col items-center md:items-start text-center md:text-left space-y-3">
                 <div className="relative w-40 sm:w-48 h-48 sm:h-56 rounded-2xl overflow-hidden border-2 border-[#F5C51B]/50 shadow-2xl shrink-0">
-                  <img
+                  <SmartImage
                     src={DIRECTOR_DATA.image}
                     alt={DIRECTOR_DATA.name}
-                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0E2232]/80 via-transparent to-transparent"></div>

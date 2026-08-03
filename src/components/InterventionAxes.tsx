@@ -1,5 +1,6 @@
 import React from 'react';
 import { Compass, Hammer, Wrench, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { SmartImage } from './SmartImage';
 
 export const InterventionAxes: React.FC = () => {
   const axes = [
@@ -61,10 +62,9 @@ export const InterventionAxes: React.FC = () => {
               >
                 {/* Image Header */}
                 <div className="relative h-52 overflow-hidden bg-[#0A1622]">
-                  <img
+                  <SmartImage
                     src={axis.image}
                     alt={axis.title}
-                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-85"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1622] via-[#0A1622]/40 to-transparent"></div>
