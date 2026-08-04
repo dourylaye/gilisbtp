@@ -9,9 +9,9 @@ interface HeroProps {
 }
 
 const HERO_IMAGES = [
-  '/images/slider1.webp',
-  '/images/slider2.webp',
-  '/images/slider3.webp'
+  '/images/slider1.jpg',
+  '/images/slider2.jpg',
+  '/images/slider3.jpg'
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onSelectRequestType }) => {
