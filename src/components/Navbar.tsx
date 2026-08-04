@@ -16,17 +16,17 @@ export const Navbar: React.FC<NavbarProps> = () => {
   const [logoIndex, setLogoIndex] = useState(0);
 
   const lightLogos = [
-    '/images/logohorizontal.webp',
-    '/Images/LogoHorizontal.webp',
-    './images/logohorizontal.webp',
-    './Images/LogoHorizontal.webp'
+    '/images/logogilis.png',
+    '/Images/logogilis.png',
+    './images/logogilis.png',
+    './Images/logogilis.png'
   ];
 
   const darkLogos = [
-    '/images/logohorizontal_white.webp',
-    '/Images/LogoHorizontal_white.webp',
-    './images/logohorizontal_white.webp',
-    './Images/LogoHorizontal_white.webp'
+    '/images/logogilis.png',
+    '/Images/logogilis.png',
+    './images/logogilis.png',
+    './Images/logogilis.png'
   ];
 
   const currentLogoCandidates = isLightBg ? lightLogos : darkLogos;
@@ -139,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo Horizontal GILIS BTP */}
+          {/* Logo GILIS BTP */}
           <a 
             href="#hero" 
             onClick={(e) => handleNavClick(e, 'hero')}
@@ -147,9 +147,9 @@ export const Navbar: React.FC<NavbarProps> = () => {
             id="header-logo"
           >
             <SmartImage 
-              src={isLightBg ? "/Images/LogoHorizontal.webp" : "/Images/LogoHorizontal_white.webp"} 
+              src={isLightBg ? "/Images/logogilis_light.png" : "/Images/logogilis_dark.png"} 
               alt="GILIS BTP" 
-              className="h-10 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+              className="h-10 md:h-12 lg:h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105"
             />
           </a>
 

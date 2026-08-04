@@ -13,10 +13,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onSelectRequestType
   const [logoIndex, setLogoIndex] = React.useState(0);
 
   const footerLogos = [
-    '/images/logovertical_white.webp',
-    '/Images/LogoVertical_white.webp',
-    './images/logovertical_white.webp',
-    './Images/LogoVertical_white.webp'
+    '/images/logogilis.png',
+    '/Images/logogilis.png',
+    './images/logogilis.png',
+    './Images/logogilis.png'
   ];
 
   const handleLogoError = () => {
@@ -49,9 +49,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onSelectRequestType
           <div className="md:col-span-7 space-y-3">
             <div className="flex items-center space-x-4">
               <SmartImage 
-                src="/Images/LogoVertical_white.webp" 
+                src="/Images/logogilis_dark.png" 
                 alt="GILIS BTP Logo" 
-                className="h-16 w-auto object-contain" 
+                className="h-14 md:h-16 w-auto object-contain" 
               />
               <div>
                 <h4 className="font-title text-base font-extrabold text-white tracking-wide">
